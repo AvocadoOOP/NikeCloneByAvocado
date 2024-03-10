@@ -1,0 +1,110 @@
+*{
+    font-family: "Oswald", sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+body{
+    overflow-x: hidden;
+    min-height: 100vh; 
+    width: 80vw;
+    margin: 0 auto;
+    transition: 0.2s background ease-in-out;
+    background: linear-gradient(to bottom, #000000, #474747); 
+    background-attachment: fixed; 
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+
+}
+
+.container form{
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    padding: 10px 10px 10px 10px;
+    width: 600px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0);
+}
+
+.container form h2{
+    font-size: 2.2vw;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.container form .inputBox{
+    margin-top: 20px;
+}
+
+.container form span{
+    display: block;
+    color:#000000;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid rgba(0,0,0,.3);
+    color:#000000;
+    font-weight: 400;
+}
+
+.container form .flexbox{
+    display: flex;
+    gap:15px;
+}
+
+.container form .flexbox .inputBox{
+    flex:1 1 150px;
+}
+
+.container form .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.container form .back-btn {
+    width: 48%;
+    background: linear-gradient(45deg, #151515, #9a9a9a);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.container form .submit-btn {
+    width: 48%;
+    background: linear-gradient(45deg, #560000, #ff0000);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.container form .back-btn:hover,
+.container form .submit-btn:hover {
+    letter-spacing: 2px;
+    opacity: .8;
+}

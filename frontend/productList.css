@@ -1,0 +1,451 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.oswald{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing:auto;
+  font-style:normal;
+}
+
+a:link {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:visited {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    min-height: 100vh; 
+    width: 80vw;
+    margin: 0 auto;
+    transition: 0.2s background ease-in-out;
+    background: linear-gradient(to bottom, #000000, #474747); 
+    background-attachment: fixed; 
+}
+
+/* Header */
+header {
+    position: fixed ;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background-color: #0a0a0ab4;
+    /* background-image: linear-gradient(to bottom, rgb(100, 100, 100), rgba(136, 136, 137, 0)); */
+    /* border-bottom: 1px solid #000000 */
+}
+
+
+.logo-img {
+    width: 4vw;
+    height: auto;
+    position: relative;
+    top: 1vh;
+}
+
+.logo-img img {
+    width: 6vw;
+    height: auto;
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu{
+    font-size: 1.5vw;
+    list-style: none;
+    display: flex;
+}
+
+.nav-item{
+    font-weight: 500;
+    font-family:"oswald", sans-serif;
+    margin: 10px 20px;
+    cursor: pointer;
+    /* padding: 10px 20px; */
+    transition: all .42s ease ;
+    color: #ffffff;
+}
+
+.nav-item:hover {
+    /* text-decoration: underline; */
+    transform: scale(1.2);
+    text-shadow: 1px 1px 5px #c5c5c5;
+}
+
+.nav-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    
+}
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i{
+    margin-right: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.5vw;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+
+.nav-icon i:hover{
+    transform: scale(1.2);
+    text-shadow: 1px 1px 5px #ffffff;
+}
+
+
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+
+.pad_container{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pad_container .product_card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #c5c5c5, #ffffff);
+    box-shadow: 10px 10px 15px #525151;
+    border-radius: 20px;
+}
+
+.pad_container .product_card .shoes_image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.pad_container .product_card:hover .shoes_image{
+    transform: translateY(-100px);
+}
+
+.pad_container .product_card .shoes_image img{
+    max-width: 100%;
+    margin: 0 0 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.pad_container .product_card:hover .shoes_image img{
+    transform: translate(-10px, -20px) rotate(-25deg) scale(1.1);
+}
+
+.pad_container .product_card .shoes_image h2{
+    color: #020202;
+    font-family:"Oswald", sans-serif;
+    font-weight: 700;
+    margin-top: -5vh;
+}
+
+.pad_container .product_card .buttons{
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.pad_container .product_card:hover .buttons{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+}
+
+.favorite_button, .buy_button {
+    margin: 0 20px; 
+}
+
+.pad_container .product_card .buy_button{
+    --width: 5vw;
+    --height: 5vh;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    transition: background 0.3s;
+}
+
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+}
+
+.buy_button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.buy_button:hover {
+  background: #222;
+}
+
+.buy_button:hover .text {
+  top: -100%;
+}
+
+.buy_button:hover .icon {
+  top: 0;
+}
+
+
+.favorite_button {
+  --red: rgb(255, 50, 50);
+  position: relative;
+  width: 2vw;
+  height: 2vh;
+}
+
+.favorite_button .like {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.favorite_button .checkmark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite_button .outline,
+.favorite_button .filled {
+  fill: var(--red);
+  position: absolute;
+}
+
+.favorite_button .filled {
+  animation: kfr-filled 0.5s;
+  display: none;
+}
+
+.favorite_button .celebrate {
+  position: absolute;
+  animation: kfr-celebrate 0.5s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.favorite_button .poly {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+.favorite_button .like:checked ~ .checkmark .filled {
+  display: block
+}
+
+.favorite_button .like:checked ~ .checkmark .celebrate {
+  display: block
+}
+
+@keyframes kfr-filled {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes kfr-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* footer */
+footer .container{
+    margin-right: 4vw;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer{
+    padding: 70px 0;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #ff0000;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+font-size: 16px;
+text-transform: capitalize;
+color: #020202;
+text-decoration: none;
+font-weight: 300;
+color: #a7a6a6;
+display: block;
+transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+color: #ffffff;
+padding-left: 8px;
+}
+
+.footer-col .social-links a{
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgb(255, 255, 255);
+margin:0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: #ff0000;
+transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+color: #ffffff;
+background-color: #ff0000;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+.footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px){
+.footer-col{
+    width: 100%;
+    }
+}

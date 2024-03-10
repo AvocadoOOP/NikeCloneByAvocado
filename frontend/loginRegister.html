@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Clone By Avocado</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet">
+    <link href="loginRegister.css" rel="stylesheet" />
+    <link rel="icon" href="PictureForNike/new-favicon.png" />
+    
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="login-register">
+        <form id="login-form" class="login-form">
+          <h2 class="title">COME BACK</h2>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input 
+                required
+                type="email"
+                name="email"
+                id="login_email"
+                placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+                required
+                type="password"
+                name="password"
+                id="login_password"
+                placeholder="Password"/>
+          </div>
+          <button type="submit" class="btn-1">LOGIN</button>
+        </form>
+
+        <form id="register-form" class="register-form">
+          <h2 class="title">CREATE ACCOUNT</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              required
+              type="text"
+              name="username"
+              id="register_username"
+              placeholder="Username"
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input
+              required
+              type="email"
+              name="email"
+              id="register_email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              required
+              type="password"
+              name="password"
+              id="register_password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+              required
+              type="password"
+              name="confirm_password"
+              id="register_confirm_password"
+              placeholder="Confirm Password"
+            />
+          </div>
+          <button type="submit" class="btn-1">REGISTER</button>
+        </form>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Welcome Back!</h3>
+            <p>
+              It's great to see you again, Enter your personal details to use
+              all of site features.
+            </p>
+            <button class="btn-2" id="login-btn">LOG IN</button>
+          </div>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Hello, New Friend!</h3>
+            <p>
+              It's nice to meet you, Enter your personal details to use all of
+              site features.
+            </p>
+            <button class="btn-2" id="register-btn">REGISTER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="loginRegister.js"></script>
+  </body>
+</html>
