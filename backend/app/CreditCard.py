@@ -1,7 +1,7 @@
 from typing import Union
 
 from pydantic import BaseModel
-from ..models.DataController import controller
+from .models.DataController import controller
 
 from fastapi import APIRouter, Body
 router = APIRouter()

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .routers import  Account, Address , CreditCard , Favorite , Order , Payment , Product , ShoppingCart
+from . import  Account, Address , CreditCard , Favorite , Order , Payment , Product , ShoppingCart
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
