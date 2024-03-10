@@ -31,4 +31,4 @@ app.include_router(ShoppingCart.router)
 
 @app.get("/")
 async def read_root():
-    return {"message": "Yo!!! it's Pat Pookkie Praewa Mew right here!!!!"}
+    return {"message": "Welcome to my API!"}
