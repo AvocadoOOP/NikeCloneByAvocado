@@ -1,9 +1,9 @@
 from typing import Union
-from fastapi import FastAPI
 from pydantic import BaseModel
 from ..models.DataController import controller
 
-app = FastAPI()
+from fastapi import APIRouter, Body
+router = APIRouter()
 
 #Men1
 controller.add_product("Nike Air Force 1'07", 5200, "Men",
@@ -586,22 +586,22 @@ class ProductIn(BaseModel):
     gender: str
     style : dict
 
-@app.get("/product-detail/{product_id}", tags =["Product"]) 
+@router.get("/product-detail/{product_id}", tags =["Product"]) 
 def get_product_detail(product_id : int):
     return controller.search_product_by_id(product_id)
 
-@app.get("/product-category/{category}", tags =["Product"]) 
+@router.get("/product-category/{category}", tags =["Product"]) 
 def get_product_in_category(category : str):
     return controller.search_product_in_category(category)
 
-@app.delete("/product-delete/{product_id}", tags =["Admin"])
+@router.delete("/product-delete/{product_id}", tags =["Admin"])
 def delete_product(product_id : int):
     return controller.delete_product(product_id)
 
-@app.post("/product-add/", tags =["Admin"])
+@router.post("/product-add/", tags =["Admin"])
 async def add_product(data: ProductIn):
     return controller.add_product(data.name, data.price, data.gender, data.style)
 
-@app.get("/product/{product_name}", tags =["Product"]) 
+@router.get("/product/{product_name}", tags =["Product"]) 
 def get_product(product_name : str):
     return controller.search_product_by_name(product_name)
