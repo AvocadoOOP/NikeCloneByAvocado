@@ -773,7 +773,7 @@ controller.add_product("Nike Air Force 1'09", 5000, "Women",
         {
             "name" : "Black",
             "list_images" : [   
-                "PictureForNike/Air-Force-1-09.png", 
+                "PictureForNike/Air-Force-1-09-Black.png", 
                 "PictureForNike/Air-Force-1-09-Black-1.png",
                 "PictureForNike/Air-Force-1-09-Black-2.png",
                 "PictureForNike/Air-Force-1-09-Black-3.png",
@@ -1003,7 +1003,7 @@ controller.add_product("Nike Fura Plus", 5600, "Women",
         {
             "name" : "Puce",
             "list_images" : [    
-                "PictureForNike/Fura-Plus.png"
+                "PictureForNike/Fura-Plus.png",
                 "PictureForNike/Fura-Plus-Puce-1.png",
                 "PictureForNike/Fura-Plus-Puce-2.png",
                 "PictureForNike/Fura-Plus-Puce-3.png",
@@ -1370,32 +1370,32 @@ controller.add_product("Nike Air Mid Sum 4 ", 2700, "Kids",
         {
             "name" : "Blue",
             "list_images" :[    
-                "PictureForNike/Air-MidSum-4.png",
-                "PictureForNike/Air-MidSum-4-Blue-1.jfif",
-                "PictureForNike/Air-MidSum-4-Blue-2.png",
-                "PictureForNike/Air-MidSum-4-Blue-3.png",
-                "PictureForNike/Air-MidSum-4-Blue-4.jfif",
-                "PictureForNike/Air-MidSum-4-Blue-5.jfif",
-                "PictureForNike/Air-MidSum-4-Blue-6.jfif"]
+                "PictureForNike/Air-Mid-Sum-4.png",
+                "PictureForNike/Air-Mid-Sum-4-Blue-1.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Blue-2.png",
+                "PictureForNike/Air-Mid-Sum-4-Blue-3.png",
+                "PictureForNike/Air-Mid-Sum-4-Blue-4.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Blue-5.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Blue-6.jfif"]
         }
         ,{
             "name" : "Colorful",
             "list_images" : [    
-                "PictureForNike/Air-MidSum-4-Colorful-1.jfif",
-                "PictureForNike/Air-MidSum-4-Colorful-2.png",
-                "PictureForNike/Air-MidSum-4-Colorful-3.png",
-                "PictureForNike/Air-MidSum-4-Colorful-4.png",
-                "PictureForNike/Air-MidSum-4-Colorful-5.png",
-                "PictureForNike/Air-MidSum-4-Colorful-6.png"]
+                "PictureForNike/Air-Mid-Sum-4-Colorful-1.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Colorful-2.png",
+                "PictureForNike/Air-Mid-Sum-4-Colorful-3.png",
+                "PictureForNike/Air-Mid-Sum-4-Colorful-4.png",
+                "PictureForNike/Air-Mid-Sum-4-Colorful-5.png",
+                "PictureForNike/Air-Mid-Sum-4-Colorful-6.png"]
         },{
             "name" : "Red",
             "list_images" : [    
-                "PictureForNike/Air-MidSum-4-Red-1.jfif",
-                "PictureForNike/Air-MidSum-4-Red-2.png",
-                "PictureForNike/Air-MidSum-4-Red-3.png",
-                "PictureForNike/Air-MidSum-4-Red-4.jfif",
-                "PictureForNike/Air-MidSum-4-Red-5.png",
-                "PictureForNike/Air-MidSum-4-Red-6.png"]
+                "PictureForNike/Air-Mid-Sum-4-Red-1.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Red-2.png",
+                "PictureForNike/Air-Mid-Sum-4-Red-3.png",
+                "PictureForNike/Air-Mid-Sum-4-Red-4.jfif",
+                "PictureForNike/Air-Mid-Sum-4-Red-5.png",
+                "PictureForNike/Air-Mid-Sum-4-Red-6.png"]
         }
     ]
 )
@@ -1460,7 +1460,7 @@ controller.add_product("Nike Lune Plus", 3500, "Kids",
         {
             "name" : "Neon",
             "list_images" :[    
-                "PictureForNike/Lune-Plus-Neon.png",
+                "PictureForNike/Lune-Plus.png",
                 "PictureForNike/Lune-Plus-Neon-1.png",
                 "PictureForNike/Lune-Plus-Neon-2.jfif",
                 "PictureForNike/Lune-Plus-Neon-3.png",
@@ -1764,7 +1764,7 @@ controller.add_product("Nike Fire Plus", 1900, "Kids",
     ]
 )
 #Kids10
-controller.add_product("Nike Air Inmortal 00", 2500, "Kids",
+controller.add_product("Nike Air Inmortel 00", 2500, "Kids",
     {
         "Orange": [60, "S"],
         "Orange": [60, "M"],
@@ -1779,32 +1779,32 @@ controller.add_product("Nike Air Inmortal 00", 2500, "Kids",
         {
             "name" : "Orange",
             "list_images" :[    
-                "PictureForNike/Air-Inmortal-00.png",
-                "PictureForNike/Air-Inmortal-00-Orange-1.png",
-                "PictureForNike/Air-Inmortal-00-Orange-2.png",
-                "PictureForNike/Air-Inmortal-00-Orange-3.png",
-                "PictureForNike/Air-Inmortal-00-Orange-4.png",
-                "PictureForNike/Air-Inmortal-00-Orange-5.jfif",
-                "PictureForNike/Air-Inmortal-00-Orange-6.png"]
+                "PictureForNike/Air-Inmortel-00.png",
+                "PictureForNike/Air-Inmortel-00-Orange-1.png",
+                "PictureForNike/Air-Inmortel-00-Orange-2.png",
+                "PictureForNike/Air-Inmortel-00-Orange-3.png",
+                "PictureForNike/Air-Inmortel-00-Orange-4.png",
+                "PictureForNike/Air-Inmortel-00-Orange-5.jfif",
+                "PictureForNike/Air-Inmortel-00-Orange-6.png"]
         }
         ,{
             "name" : "White",
             "list_images" : [    
-                "PictureForNike/Air-Inmortal-00-White-1.png",
-                "PictureForNike/Air-Inmortal-00-White-2.png",
-                "PictureForNike/Air-Inmortal-00-White-3.png",
-                "PictureForNike/Air-Inmortal-00-White-4.png",
-                "PictureForNike/Air-Inmortal-00-White-5.png",
-                "PictureForNike/Air-Inmortal-00-White-6.png"]
+                "PictureForNike/Air-Inmortel-00-White-1.png",
+                "PictureForNike/Air-Inmortel-00-White-2.png",
+                "PictureForNike/Air-Inmortel-00-White-3.png",
+                "PictureForNike/Air-Inmortel-00-White-4.png",
+                "PictureForNike/Air-Inmortel-00-White-5.png",
+                "PictureForNike/Air-Inmortel-00-White-6.png"]
         },{
             "name" : "Black",
             "list_images" : [    
-                "PictureForNike/Air-Inmortal-00-Black-1.png",
-                "PictureForNike/Air-Inmortal-00-Black-2.jfif",
-                "PictureForNike/Air-Inmortal-00-Black-3.png",
-                "PictureForNike/Air-Inmortal-00-Black-4.png",
-                "PictureForNike/Air-Inmortal-00-Black-5.jfif",
-                "PictureForNike/Air-Inmortal-00-Black-6.png"]
+                "PictureForNike/Air-Inmortel-00-Black-1.png",
+                "PictureForNike/Air-Inmortel-00-Black-2.jfif",
+                "PictureForNike/Air-Inmortel-00-Black-3.png",
+                "PictureForNike/Air-Inmortel-00-Black-4.png",
+                "PictureForNike/Air-Inmortel-00-Black-5.jfif",
+                "PictureForNike/Air-Inmortel-00-Black-6.png"]
         }
     ]
 )

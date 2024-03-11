@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     price.innerHTML = ` <small>฿ </small>${product._Product__price} `;
 
     slide.innerHTML = product._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
-        if (item.split(".")[0][item.split(".")[0].length-1] <= "1"){
+        if (item.split(".")[0][item.split(".")[0].length-1] < "1"){
             return
         }
         return `<img src="${item}" onclick="img('${item}')">`
