@@ -1,0 +1,359 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-top: 100px; 
+    }
+}
+
+.oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+  
+a:link,
+a:visited {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh; 
+    width: 80vw;
+    margin: 0 auto;
+    transition: 0.2s background ease-in-out;
+    background: linear-gradient(to bottom, #000000, #474747); 
+    background-attachment: fixed; 
+}
+
+.heading{
+    margin-left: 2vw;
+    font-size: 2vw;
+}
+
+.confirm_card {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+.confirm_address, .confirm_creditCard {
+    font-family: "Oswald", sans-serif;
+    position: relative;
+    width: 48%;
+    height: auto;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 3px rgb(0, 0, 0);
+}
+
+.confirm_address .address-button,
+.confirm_creditCard .CreditCard-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1vh;
+    margin-right: 0.5vw;
+}
+
+.confirm_address .address_details,
+.confirm_creditCard .creditCart_details {
+    margin-top: 2vh;
+    margin-left: 2vw; 
+    margin-bottom: 2vh;
+    font-size:1.5vw;
+}
+
+
+@media (max-width: 768px) {
+    .confirm_address,
+    .confirm_creditCard,
+    .buttons {
+        width: 100%;
+    }
+}
+
+.address-button,
+.CreditCard-button,
+.buttonForEdit {
+    position: relative;
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+}
+
+.address-dropdown-button,
+.CreditCard-dropdown-button {
+    background-color: #ff0000;
+    color: #212121;
+    padding: 8px 15px;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 700;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: relative;
+    display: none;
+    font-size: 1vw;
+    z-index: 1;
+    min-width: 200px;
+    background-color: #212121;
+    border: 2px solid #ff0000;
+    border-radius: 0px 15px 15px 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff0000;
+    color: #212121;
+}
+
+.dropdown-content a:focus {
+    background-color: #212121;
+    color: #ff0000;
+}
+
+.dropdown-content #drop-down-address1:hover {
+    border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #drop-down-more-address:hover {
+    border-radius: 0px 0px 13px 13px;
+}
+
+.dropdown-content #drop-down-CreditCard1:hover {
+    border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #drop-down-more-CreditCard:hover {
+    border-radius: 0px 0px 13px 13px;
+}
+
+.address-button:hover .address-dropdown-button,
+.CreditCard-button:hover .CreditCard-dropdown-button {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.address-button:hover .dropdown-content,
+.CreditCard-button:hover .dropdown-content {
+    display: block;
+}
+
+.edit-btn {
+    position: relative;
+    z-index: 1;
+    padding: 1.5vh 1.5vw;
+    border: unset;
+    border-radius: 15px;
+    color: #ff0000;
+    background: #000000;
+    font-weight: 1000;
+    font-size: 1vw;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.edit-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ff0000;
+    z-index: -1;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+.edit-btn:hover {
+    color: #ffffff;
+}
+
+.edit-btn:hover::before {
+    width: 100%;
+}
+
+.button-group {
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn,
+.submit-btn {
+    width: 48%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.back-btn {
+    background: linear-gradient(45deg, #6b6b6b, #9a9a9a);
+    border: 2px solid #ffffff;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #560000, #ff0000);
+    border: 2px solid #ffffff;
+}
+
+.back-btn:hover,
+.submit-btn:hover {
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+
+/*
+.paid
+{
+ display:none;
+  width:50vw;
+  margin:0 auto;
+  background-color:#fff;
+  text-align:center;
+  padding-top:25px;
+  border-radius:0px 0px 10px 10px;
+  padding-bottom:25px; 
+  color:#ff0000;
+  line-height:30px;
+}
+.paid p
+{
+  background-image:url("http://dc455.4shared.com/download/VILITso0/tsid20130720-183900-9216b81f/check.png");
+  background-repeat:no-repeat;
+  background-position:left center;
+  padding-left:30px;
+  width:50vw;
+  margin:0 auto;
+ }
+.container
+{
+  width:50vw;
+  margin:50px auto;
+  font-family: "Oswald", sans-serif;
+}
+.tab
+{
+  width:350px;
+  margin:0 auto;
+  height:10px;
+  background-color:#a8a8a8;
+  border-radius:50px
+}
+.receipt
+{
+   background-color:#FAFAF9;
+  padding-top:20px;
+    width:300px;
+  height:300px;
+  margin:-5px auto;
+  border-radius:5px 5px 50px 50px;
+  -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.paper
+{ 
+  border-top:1px dashed #ccc;
+  width:96%;
+  margin:0 auto;
+}
+.title
+{
+  color:#000000;
+  margin-top:20px;
+  margin-left:10px;
+  font-weight:bold;
+  float:left;
+  font-size:16px;
+  line-height:30px;
+}
+.date
+{
+  color:#000000;
+  margin-top:20px;
+  margin-right:10px;
+  font-weight:lighter;
+  float:right;
+  font-size:12px;
+    line-height:30px;
+}
+table
+{
+  clear:both;
+  width:95%;
+  margin:0 auto;
+  color:#5B5B5B;
+  font-size:12px;
+  padding-top:10px;
+  padding-bottom:20px;
+  border-bottom:1px dashed #ccc;
+}
+.right
+{
+  text-align:right;
+}
+.center
+{
+  text-align:center;
+  padding-top:20px;
+}
+input[type=button_ok]
+{
+  background-color:#ff0303;
+  border:1px solid #ccc;
+  padding:10px;
+  border-radius:5px;
+  font-weight:bold;
+  color:#fff;
+  text-align:center;
+}
+input[type=button_ok]:hover
+{
+  -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  cursor:pointer;
+  color:#f0f0f0;
+}
+.sign
+{
+text-align:center;
+}
+.thankyou
+{
+  line-height:14px;
+  font-size:10px;
+  margin-top:5px;
+  color:#5B5B5B;
+  width:100%;
+} */

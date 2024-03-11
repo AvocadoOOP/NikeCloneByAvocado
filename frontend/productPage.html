@@ -30,10 +30,19 @@
 
             <div class = "nav-icon-wrapper">
                 <ul class = "nav-icon">
-                    <i id="search" class='bx bx-search-alt-2'></i>
-                    <i id="open_cart" class='bx bx-cart'></i>
-                    <i class='bx bx-heart'></i>
-                    <i><a href="loginRegister.html"><i class='bx bx-user'></i></a></i>
+                  <label class="toggle-search-container">
+                    <input class="toggle-search-checkbox" type="checkbox">
+                    <div class="toggle-search-button">
+                        <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                        </svg>
+                    </div>
+                    <input class="search_input" placeholder="search" type="text">
+                  </label>
+                  
+                  <i id="open_cart" class='bx bx-cart'></i>
+                  <i class='bx bx-heart'></i>
+                  <i><a href="loginRegister.html"><i class='bx bx-user'></i></a></i>
                 </ul>
             </div>
         </header>
@@ -114,7 +123,7 @@
             </div>
         </section>
 
-        <div id="sideCard" class="sideCart">
+        <div id="sideCart" class="sideCart">
           <div class="cart_content">
             <div class="cart_header">
               <i class='bx bx-cart'></i>
@@ -122,7 +131,7 @@
                 <h2>Your Cart</h2>
                 <span id="item_number">1</span>
               </div>
-              <span id="close_button" class="close_button">&times;</span>
+              <span id="close_cart" class="close_cart">&times;</span>
             </div>
             
             <div class="cart_items">
@@ -157,46 +166,6 @@
   
           </div>
         </div>
-
-        <!-- <footer class="footer">
-            <div class="container">
-             <div class="row">
-               <div class="footer-col">
-                 <h4>company</h4>
-                 <ul>
-                   <li><a href="#">about us</a></li>
-                   <li><a href="#">our services</a></li>
-                   <li><a href="#">privacy policy</a></li>
-                 </ul>
-               </div>
-               <div class="footer-col">
-                 <h4>get help</h4>
-                 <ul>
-                   <li><a href="#">shipping</a></li>
-                   <li><a href="#">order status</a></li>
-                   <li><a href="#">order history</a></li>
-                 </ul>
-               </div>
-               <div class="footer-col">
-                 <h4>Create By</h4>
-                 <ul>
-                   <li><a href="#">Pusida Chuasrirporn</a></li>
-                   <li><a href="#">Pusita Chuasrirporn</a></li>
-                   <li><a href="#">Montagan Yoochayantee</a></li>
-                 </ul>
-               </div>
-               <div class="footer-col">
-                 <h4>follow Nike</h4>
-                 <div class="social-links">
-                   <a href="https://www.facebook.com/nike"><i class='bx bxl-facebook'></i></a>
-                   <a href="https://twitter.com/Nike"><i class='bx bxl-twitter'></i></a>
-                   <a href="https://www.instagram.com/nike"><i class='bx bxl-instagram'></i></a>
-                   <a href="https://www.youtube.com/user/nike"><i class='bx bxl-youtube'></i></a>
-                 </div>
-               </div>
-             </div>
-            </div>
-         </footer> -->
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

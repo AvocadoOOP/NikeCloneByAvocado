@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-top: 100px; 
+    }
+}
+
+.oswald{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing:auto;
+  font-style:normal;
+}
+
+a:link {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:visited {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    min-height: 100vh; 
+    width: 80vw;
+    margin: 0 auto;
+    transition: 0.2s background ease-in-out;
+    background: linear-gradient(to bottom, #000000, #474747); 
+    background-attachment: fixed; 
+}
+
+.container{
+    position: relative;
+    width: 70vw;
+    height: auto;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 3px rgb(0, 0, 0);
+    align-items: center; 
+    margin: 15vh auto;
+    font-family: "Oswald", sans-serif;
+}
+
+.header{
+    font-size: 3vw;
+    text-align: center;
+}
+
+.Order_id {
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin: 0 0 0 2vw;
+}
+
+.date h2{
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.date {
+    margin: 0 2vw 5vh 2vw;
+    border-bottom: 1px solid #000000;
+}
+
+.items{
+    position: relative;
+    width: 70vw;
+    display: flex;
+}
+
+.item{
+    padding-bottom: 5vh;
+    margin: 0 6vw 0 6vw;
+    position: relative;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #d2d2d2; 
+}
+
+.product_img {
+    max-width: 8vw;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 3vw;
+    border: 1px solid #000000;
+}
+
+.text_about_product{
+    font-size: 1.5vw;
+}
+.buy_again {
+    height: 8vh;
+    padding: 1.5vh 1.5vw;
+    border: unset;
+    border-radius: 15px;
+    color: #ff0000;
+    z-index: 1;
+    background: #000000;
+    font-weight: 700;
+    font-size: 1vw;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    align-items: center;
+    position: absolute; 
+    right: 1.5vw; 
+}
+
+.buy_again::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ff0000;
+    z-index: -1;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+.buy_again:hover {
+    color: #ffffff;
+}
+
+.buy_again:hover::before {
+    width: 100%;
+}
+   
+.cart_actions{
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid #939393;
+  box-shadow: 0 -5px 10px #939393;
+}
+
+.cart_actions .total{
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3vw;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+}
+
+.back-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #656565, #9a9a9a);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.back-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+

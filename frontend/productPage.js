@@ -41,9 +41,16 @@ plusBtns.forEach((plusBtn, index) => {
 
 const openCart = document.getElementById('open_cart');
 const cart = document.getElementById('sideCart');
+const closeCart = document.getElementById('close_cart');
 
 openCart.addEventListener('click', openSideCart);
+closeCart.addEventListener('click', closeSideCart);
 
 function openSideCart() {
     cart.classList.add('open');
 }
+
+function closeSideCart() {
+    cart.classList.remove('open');
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nike Clone By Avocado</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" href="PictureForNike/new-favicon.png">
+        <link href="history.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <h1 class="header">Your Product</h1>
+            <h2 class="Order_id">Order <span>00000</span></h2>
+            <div class="date">
+                <h2>Order date <span>00/00/00</span></h2>
+                <h2>Succeed date <span>00/00/00</span></h2>
+            </div>
+
+            <div class="items">
+                <div class="item">
+                    <img class="product_img" src="PictureForNike/air-force-1-07-black-1.png">
+                    <div class="text_about_product">
+                        <h2 class="name_product">Nike Air Force 1 '07</h2>
+                        <div class="product_detail">
+                            <div class="color">black</div>
+                            <div class="amount">1</div>
+                            <p>฿<span id="price">3500</span></p>
+                        </div>
+                    </div>
+                    <button class="buy_again">Buy Again</button>
+                </div>
+
+            </div>
+
+            <div class="cart_actions">
+                <div class="total">
+                  <p>Total</p>
+                  <p>฿<span id="subtotal_price">3500</span></p>
+                </div>
+                <input type="button" value="Back" class="back-btn">
+              </div>
+    
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src = "history.js"></script>
+    </body>
+</html>
+
