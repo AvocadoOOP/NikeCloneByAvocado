@@ -586,6 +586,11 @@ class ProductIn(BaseModel):
     gender: str
     style : dict
 
+@router.get("/product-detail/all", tags =["Product"]) 
+def get_product_detail():
+    return controller.get_all_product()
+
+
 @router.get("/product-detail/{product_id}", tags =["Product"]) 
 def get_product_detail(product_id : int):
     return controller.search_product_by_id(product_id)

@@ -8,6 +8,9 @@ class Controller:
         self.__list_customer = []
         self.__list_admin = []
 
+    def get_all_product(self):
+        return self.__list_product
+
     def add_to_product_list(self, product):
        if product not in self.__list_product:
             self.__list_product.append(product)
