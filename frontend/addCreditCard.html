@@ -1,85 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Nike Clone By Avocado</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" href="PictureForNike/new-favicon.png">
-        <link rel="stylesheet" href="addCreditCard.css">
-    </head>
-
-
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Clone By Avocado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="PictureForNike/new-favicon.png">
+    <link rel="stylesheet" href="addCreditCard.css">
+</head>
 <body>
 
-    <div class="container">
-
-        <div class="card-container">
-
-            <div class="front">
-                <div class="image">
-                    <img src="PictureForNike/chip.png" alt="">
-                    <img src="PictureForNike/visa.png" alt="">
-                </div>
-                <div class="card-number-box">################</div>
-                <div class="flexbox">
-                    <div class="box">
-                        <span>card holder</span>
-                        <div class="card-holder-name">full name</div>
-                    </div>
-                </div>
+<div class="container">
+    <div class="card-container">
+        <div class="front">
+            <div class="image">
+                <img src="PictureForNike/chip.png" alt="">
+                <img src="PictureForNike/visa.png" alt="">
+                <img src="PictureForNike/master.png" alt="" style="display: none;"> 
+                <img src="PictureForNike/jcb.png" alt="" style="display: none;"> 
             </div>
-
-            <div class="back">
-                <div class="stripe"></div>
-                <div class="box">
-                    <span>cvv</span>
-                    <div class="cvv-box"></div>
-                    <img src="PictureForNike/visa.png" alt="">
-                </div>
-            </div>
-
-        </div>
-
-        <form action="">
-            <span>Type Card</span>
-            <div class="radio-input">
-                <input value="Visa" name="type_card" id="visa" type="radio">
-                <label for="visa">VISA</label>
-                <input value="Master" name="type_card" id="master" type="radio">
-                <label for="master">MASTER</label>
-                <input value="JCB" name="type_card" id="jcb" type="radio">
-                <label for="jcb">JCB</label>
-            </div>
-            
-            <div class="inputBox">
-                <span>card number</span>
-                <input type="text" maxlength="16" class="card-number-input">
-            </div>
-            <div class="inputBox">
-                <span>card holder</span>
-                <input type="text" class="card-holder-input">
-            </div>
+            <div class="card-number-box">################</div>
             <div class="flexbox">
-                <div class="inputBox">
-                    <span>pin number</span>
-                    <input type="password" maxlength="4" class="cvv-input">
+                <div class="box">
+                    <span>card holder</span>
+                    <div class="card-holder-name">full name</div>
                 </div>
             </div>
-            <div class="button-group">
-                <input type="button" value="Back" class="back-btn">
-                <input type="submit" value="Submit" class="submit-btn">
+        </div>
+        <div class="back">
+            <div class="stripe"></div>
+            <div class="box">
+                <span>cvv</span>
+                <div class="cvv-box"></div>
+                <div class="image">
+                    <img src="PictureForNike/visa.png" alt="">
+                    <img src="PictureForNike/master.png" alt="" style="display: none;"> 
+                    <img src="PictureForNike/jcb.png" alt="" style="display: none;"> 
+                </div>
             </div>
-        </form>
+        </div>
+    </div>
+    <form action="">
+        <span>Type Card</span>
+        <div class="radio-input">
+            <input value="Visa" name="type_card" id="visa" type="radio">
+            <label for="visa">VISA</label>
+            <input value="Master" name="type_card" id="master" type="radio">
+            <label for="master">MASTER</label>
+            <input value="JCB" name="type_card" id="jcb" type="radio">
+            <label for="jcb">JCB</label>
+        </div>
+        <div class="inputBox">
+            <span>card number</span>
+            <input type="text" maxlength="16" class="card-number-input">
+        </div>
+        <div class="inputBox">
+            <span>card holder</span>
+            <input type="text" class="card-holder-input">
+        </div>
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>pin number</span>
+                <input type="password" maxlength="4" class="cvv-input">
+            </div>
+        </div>
+        <div class="button-group">
+            <input type="button" value="Back" class="back-btn">
+            <input type="submit" value="Submit" class="submit-btn">
+        </div>
+    </form>
+</div>
 
-    </div>    
-        
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src = "addCreditCard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="addCreditCard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const cardTypeInputs = document.querySelectorAll('input[name="type_card"]');
+
+    cardTypeInputs.forEach(input => {
+        input.addEventListener('change', changeCardImage);
+    });
+
+    function changeCardImage() {
+        const visaImage = document.querySelector('.image img[src="PictureForNike/visa.png"]');
+        const masterImage = document.querySelector('.image img[src="PictureForNike/master.png"]'); 
+        const jcbImage = document.querySelector('.image img[src="PictureForNike/jcb.png"]'); 
+
+        if (this.value === "JCB") {
+            visaImage.style.display = 'none';
+            masterImage.style.display = 'none';
+            jcbImage.style.display = 'block'; 
+        } else if (this.value === "Master") {
+            visaImage.style.display = 'none';
+            jcbImage.style.display = 'none'; 
+            masterImage.style.display = 'block'; 
+        } else {
+            masterImage.style.display = 'none'; 
+            jcbImage.style.display = 'none'; 
+            visaImage.style.display = 'block';
+        }
+    }
+
+</script>
 </body>
 </html>

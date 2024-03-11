@@ -234,9 +234,9 @@ class Controller:
             return customer.name, customer.email, customer.phone, result
         return customer  
     
-    def add_product(self, product_name, price, category, product_style):
+    def add_product(self, product_name, price, category, product_style , list_images ):
         if self.search_product_by_name(product_name) == {"Data ": "Not found "} :
-            self.add_to_product_list(Product(product_name, price, category, product_style))
+            self.add_to_product_list(Product(product_name, price, category, product_style,list_images))
             return {"data": "added successfully"}
         return {"data": "added not successfully"}
     
