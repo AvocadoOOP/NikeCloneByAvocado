@@ -586,7 +586,7 @@ class ProductIn(BaseModel):
     gender: str
     style : dict
 
-@router.get("/product-detail/all", tags =["Product"]) 
+@router.get("/product/all", tags =["Product"]) 
 def get_product_detail():
     return controller.get_all_product()
 
