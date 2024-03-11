@@ -54,6 +54,9 @@ function closeSideCart() {
     cart.classList.remove('open');
 }
 
+let  selectedColor = ""
+let productShow = {}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => { 
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     console.log (product);
     const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
-    const selectedColor = product._Product__list_images[0]?.name;
+    selectedColor = product._Product__list_images[0]?.name;
     
 
     console.log(selectedColor)
@@ -73,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const category = document.getElementById("category");
     const price = document.getElementById("price");
     const slide = document.getElementById("slider");
-
+    const list_colors = document.getElementById("list_colors");
+    const list_size = document.getElementById("list_size");
     
 
     mainImage.src = imageUrl;
@@ -89,6 +93,27 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }).join("");
 
+    list_colors.innerHTML = product._Product__list_images.map((color, index) => {
+        if (index === 0){
+            return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" class="selected"></span>`
+        }
+        return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" ></span>`
+    }).join("");
+
+    list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
+        if(style._ProductStyle__color === selectedColor){
+            return `
+            <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
+            `
+
+        }
+
+        return 
+
+    }).join("");
+
+    productShow = product;
+    
 
 })
 
@@ -131,3 +156,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+const handleSelectedColor = (color) => {
+    selectedColor = color;
+    const list_colors = document.getElementById("list_colors");
+    const list_size = document.getElementById("list_size");
+
+    list_colors.innerHTML = productShow._Product__list_images.map((color, index) => {
+        if (color.name === selectedColor){
+            return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" class="selected"></span>`
+        }
+
+        return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" ></span>`
+    }).join("");
+    
+    list_size.innerHTML = productShow._Product__list_product_style.map((style, index) => {
+        if(style._ProductStyle__color === selectedColor){
+            return `
+            <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
+            `
+        }
+        return 
+    }).join("");
+}

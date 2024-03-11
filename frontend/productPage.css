@@ -225,8 +225,9 @@ h5 {
     background: orange;
 }
 
-.color span:hover{
-    border: 3px solid #333;
+
+.selected {
+    border: 3px solid #ff0000;
     transform: scale(1.1);
 }
 
