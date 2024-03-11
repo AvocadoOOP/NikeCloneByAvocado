@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("kids_product")).forEach((card) => {
         card.addEventListener("click", function() {
-            localStorage.setItem("product" , "kids")
+            localStorage.setItem("product" , "Kids")
             window.location.href = "/productList.html";
         });
     });
