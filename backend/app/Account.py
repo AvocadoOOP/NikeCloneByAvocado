@@ -22,7 +22,7 @@ class PhoneIn(BaseModel):
 def register(data : RegisterIn):
     return controller.register(data.username, data.email, data.password)
 
-@router.post("/Login/", tags =["Login"])
+@router.post("/login/", tags =["Login"])
 def login(data : LoginIn):
     return controller.login(data.email, data.password)
 

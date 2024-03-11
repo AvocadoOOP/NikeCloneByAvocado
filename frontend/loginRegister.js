@@ -24,7 +24,8 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     axios.post('http://127.0.0.1:8000/register/', formData)
     .then(response => {
         console.log(response.data);
-        // Handle response data
+        container.classList.remove("register-mode");
+        
 
     })
     .catch(error => {
