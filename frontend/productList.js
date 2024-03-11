@@ -4,13 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (productType === "all") {
       axios.get("http://localhost:8000/product/all").then((response) => {
-        console.log(response.data);
 
-        response.data.forEach((product) => {
+
+
+
+        const result = response.data.forEach((product) => {
+
+          let imageUrl = '';
+
+
+          try {
+            imageUrl = product._Product__list_images[0]?.list_images[0] || '';
+          } catch (error) {
+
+          }
+
+
           const card = `
             <div class="product_card">
               <div class="shoes_image">
-                <img src="PictureForNike/air-force-1-07.png">
+                <img src="${imageUrl}">
                 <h2>${product._Product__product_name}</h2>
               </div>
 
@@ -49,7 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
             
             </div>`;
           document.getElementById("product-list").innerHTML += card;
+
+          return product;
         });
+
+        console.log(result);
       });
     }
     else {
@@ -57,11 +74,21 @@ document.addEventListener("DOMContentLoaded", function () {
       axios.get("http://localhost:8000/product/all").then((response) => {
         console.log(response.data);
 
-        response.data.filter(product => product._Product__category === productType).forEach((product) => {
+        let imageUrl = '';
+
+        const result =  response.data.filter(product => product._Product__category === productType).map((product) => {
+          try {
+            imageUrl = product._Product__list_images[0]?.list_images[0] || '';
+          } catch (error) {
+            console.log(error)
+          }
+
+
+
           const card = `
             <div class="product_card">
               <div class="shoes_image">
-                <img src="PictureForNike/air-force-1-07.png">
+              <img src="${imageUrl}">
                 <h2>${product._Product__product_name}</h2>
               </div>
 
@@ -100,7 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
             
             </div>`;
           document.getElementById("product-list").innerHTML += card;
+          return product;
         });
+
+
+        console.log(result);  
       });
 
 

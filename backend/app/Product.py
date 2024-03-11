@@ -32,7 +32,7 @@ controller.add_product("Nike Air Force 1'07", 5200, "Men",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/air-force-1-07-Blue-1.png",
                 "PictureForNike/air-force-1-07-Blue-2.png",
                 "PictureForNike/air-force-1-07-Blue-3.png",
@@ -41,7 +41,7 @@ controller.add_product("Nike Air Force 1'07", 5200, "Men",
                 "PictureForNike/air-force-1-07-Blue-6.jpg"]
         },{
             "name" : "Orange",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/air-force-1-07-Orange-1.png",
                 "PictureForNike/air-force-1-07-Orange-2.png",
                 "PictureForNike/air-force-1-07-Orange-3.png",
@@ -78,7 +78,7 @@ controller.add_product("Nike Full Fox", 4500, "Men",
         }
         ,{
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Full-Fox-Red-1.png",
                 "PictureForNike/Full-Fox-Red-2.png",
                 "PictureForNike/Full-Fox-Red-3.png",
@@ -88,7 +88,7 @@ controller.add_product("Nike Full Fox", 4500, "Men",
         }
         ,{
             "name" : "Yellow",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Full-Fox-Yellow-1.png",
                 "PictureForNike/Full-Fox-Yellow-2.png",
                 "PictureForNike/Full-Fox-Yellow-3.png",
@@ -126,7 +126,7 @@ controller.add_product("Nike Air Jojo", 4200, "Men",
         }
         ,{
             "name" : "Grey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/air-jojo-Grey-1.jpg",
                 "PictureForNike/air-jojo-Grey-2.png",
                 "PictureForNike/air-jojo-Grey-3.png",
@@ -136,7 +136,7 @@ controller.add_product("Nike Air Jojo", 4200, "Men",
         }
         ,{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Jojo-White-1.png",
                 "PictureForNike/Air-Jojo-White-2.png",
                 "PictureForNike/Air-Jojo-White-3.png",
@@ -173,7 +173,7 @@ controller.add_product("Nike Air Popcorn 4", 5000, "Men",
         }
         ,{
             "name" : "Mint",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Popcorn-4-Mint-1.png",
                 "PictureForNike/Air-Popcorn-4-Mint-2.png",
                 "PictureForNike/Air-Popcorn-4-Mint-3.png",
@@ -183,7 +183,7 @@ controller.add_product("Nike Air Popcorn 4", 5000, "Men",
         }
         ,{
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Popcorn-4-Pink-1.png",
                 "PictureForNike/Air-Popcorn-4-Pink-2.png",
                 "PictureForNike/Air-Popcorn-4-Pink-3.png",
@@ -220,7 +220,7 @@ controller.add_product("Nike Air Popcorn 9 By Me", 6100, "Men",
         }
         ,{
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Popcorn-9-By-Me-Red-1.png",
                 "PictureForNike/Air-Popcorn-9-By-Me-Red-2.png",
                 "PictureForNike/Air-Popcorn-9-By-Me-Red-3.png",
@@ -230,7 +230,7 @@ controller.add_product("Nike Air Popcorn 9 By Me", 6100, "Men",
         }
         ,{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Popcorn-9-By-Me-Green-1.png",
                 "PictureForNike/Air-Popcorn-9-By-Me-Green-2.jfif",
                 "PictureForNike/Air-Popcorn-9-By-Me-Green-3.jfif",
@@ -267,7 +267,7 @@ controller.add_product("Nike Taba", 3500, "Men",
         }
         ,{
             "name" : "Lime",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Taba-Lime-1.png",
                 "PictureForNike/Taba-Lime-2.png",
                 "PictureForNike/Taba-Lime-3.png",
@@ -277,7 +277,7 @@ controller.add_product("Nike Taba", 3500, "Men",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Taba-Black-1.png",
                 "PictureForNike/Taba-Black-2.png",
                 "PictureForNike/Taba-Black-3.png",
@@ -314,7 +314,7 @@ controller.add_product("Nike Sum Vanom", 4500, "Men",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Sum-Vanom-Blue-1.png",
                 "PictureForNike/Sum-Vanom-Blue-2.png",
                 "PictureForNike/Sum-Vanom-Blue-3.png",
@@ -324,7 +324,7 @@ controller.add_product("Nike Sum Vanom", 4500, "Men",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Sum-Vanom-Black-1.png",
                 "PictureForNike/Sum-Vanom-Black-2.jfif",
                 "PictureForNike/Sum-Vanom-Black-3.png",
@@ -361,7 +361,7 @@ controller.add_product("Nike Min Drift", 7000, "Men",
         }
         ,{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Min-Drift-White-1.png",
                 "PictureForNike/Min-Drift-White-2.jfif",
                 "PictureForNike/Min-Drift-White-3.png",
@@ -371,7 +371,7 @@ controller.add_product("Nike Min Drift", 7000, "Men",
         }
         ,{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Min-Drift-Black-1.png",
                 "PictureForNike/Min-Drift-Black-2.jfif",
                 "PictureForNike/Min-Drift-Black-3.png",
@@ -408,7 +408,7 @@ controller.add_product("Nike Air Max 80", 6500, "Men",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-80-Blue-1.png",
                 "PictureForNike/Air-Max-80-Blue-2.png",
                 "PictureForNike/Air-Max-80-Blue-3.png",
@@ -418,7 +418,7 @@ controller.add_product("Nike Air Max 80", 6500, "Men",
         }
         ,{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-80-Navy-Green-1.png",
                 "PictureForNike/Air-Max-80-Navy-Green-2.png",
                 "PictureForNike/Air-Max-80-Navy-Green-3.png",
@@ -455,7 +455,7 @@ controller.add_product("Nike Hard OOP 4", 100000, "Men",
         }
         ,{
             "name" : "Grey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Hard-OOP-4-Grey-1.png",
                 "PictureForNike/Hard-OOP-4-Grey-2.png",
                 "PictureForNike/Hard-OOP-4-Grey-3.png",
@@ -465,7 +465,7 @@ controller.add_product("Nike Hard OOP 4", 100000, "Men",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Hard-OOP-4-Black-1.png",
                 "PictureForNike/Hard-OOP-4-Black-2.png",
                 "PictureForNike/Hard-OOP-4-Black-3.png",
@@ -502,7 +502,7 @@ controller.add_product("Nike Air Max 27", 6400, "Men",
         }
         ,{
             "name" : "Purple",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-27-Purple-1.jfif",
                 "PictureForNike/Air-Max-27-Purple-2.jfif",
                 "PictureForNike/Air-Max-27-Purple-3.jfif",
@@ -512,7 +512,7 @@ controller.add_product("Nike Air Max 27", 6400, "Men",
         }
         ,{
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-27-Pink-1.png",
                 "PictureForNike/Air-Max-27-Pink-2.png",
                 "PictureForNike/Air-Max-27-Pink-3.png",
@@ -549,7 +549,7 @@ controller.add_product("Nike Air Max Hippo", 5600, "Men",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-Hippo-Black-1.jfif",
                 "PictureForNike/Air-Max-Hippo-Black-2.jfif",
                 "PictureForNike/Air-Max-Hippo-Black-3.jfif",
@@ -559,7 +559,7 @@ controller.add_product("Nike Air Max Hippo", 5600, "Men",
         }
         ,{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-Hippo-Green-1.png",
                 "PictureForNike/Air-Max-Hippo-Green-2.png",
                 "PictureForNike/Air-Max-Hippo-Green-3.png",
@@ -596,7 +596,7 @@ controller.add_product("Nike Air Luk", 7800, "Men",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Luk-Blue-1.jfif",
                 "PictureForNike/Air-Luk-Blue-2.jfif",
                 "PictureForNike/Air-Luk-Blue-3.png",
@@ -606,7 +606,7 @@ controller.add_product("Nike Air Luk", 7800, "Men",
         }
         ,{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Luk-White-1.png",
                 "PictureForNike/Air-Luk-White-2.png",
                 "PictureForNike/Air-Luk-White-3.png",
@@ -643,7 +643,7 @@ controller.add_product("Nike Y2K Men 01", 5700, "Men",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Y2K-Men-01-Blue-1.png",
                 "PictureForNike/Y2K-Men-01-Blue-2.jfif",
                 "PictureForNike/Y2K-Men-01-Blue-3.png",
@@ -653,7 +653,7 @@ controller.add_product("Nike Y2K Men 01", 5700, "Men",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Y2K-Men-01-Black-1.png",
                 "PictureForNike/Y2K-Men-01-Black-2.jfif",
                 "PictureForNike/Y2K-Men-01-Black-3.png",
@@ -690,7 +690,7 @@ controller.add_product("Nike Air Shell 70", 4000, "Men",
         }
         ,{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Shell-70-Green-1.png",
                 "PictureForNike/Air-Shell-70-Green-2.jfif",
                 "PictureForNike/Air-Shell-70-Green-3.png",
@@ -700,7 +700,7 @@ controller.add_product("Nike Air Shell 70", 4000, "Men",
         }
         ,{
             "name" : "Orange",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Shell-70-Orange-1.png",
                 "PictureForNike/Air-Shell-70-Orange-2.png",
                 "PictureForNike/Air-Shell-70-Orange-3.png",
@@ -726,7 +726,7 @@ controller.add_product("Nike Taba", 4400, "Women",
     ,[
         {
             "name" : "Puce",
-            "list_image" : [   
+            "list_images" : [   
                 "PictureForNike/taba.png", 
                 "PictureForNike/taba-Puce-1.jpg",
                 "PictureForNike/taba-Puce-2.jpg",
@@ -746,7 +746,7 @@ controller.add_product("Nike Taba", 4400, "Women",
                 "PictureForNike/taba-Black-6.jpg"]
         },{
            "name" : "Mint",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/taba-mint-1.jpg",
                 "PictureForNike/taba-mint-2.jpg",
                 "PictureForNike/taba-mint-3.jpg",
@@ -772,7 +772,7 @@ controller.add_product("Nike Air Force 1'09", 5000, "Women",
     ,[
         {
             "name" : "Black",
-            "list_image" : [   
+            "list_images" : [   
                 "PictureForNike/Air-Force-1-09.png", 
                 "PictureForNike/Air-Force-1-09-Black-1.png",
                 "PictureForNike/Air-Force-1-09-Black-2.png",
@@ -792,7 +792,7 @@ controller.add_product("Nike Air Force 1'09", 5000, "Women",
                 "PictureForNike/Air-Force-1-09-Brown-6.png"]
         },{
            "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Force-1-09-Pink-1.png",
                 "PictureForNike/Air-Force-1-09-Pink-2.png",
                 "PictureForNike/Air-Force-1-09-Pink-3.png",
@@ -818,7 +818,7 @@ controller.add_product("Nike Princess 19", 5500, "Women",
     ,[
         {
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/princess-19.png",
                 "PictureForNike/princess-19-Pink-1.png",
                 "PictureForNike/princess-19-Pink-2.png",
@@ -864,7 +864,7 @@ controller.add_product("Nike Air Max 12", 4700, "Women",
      ,[
         {
             "name" : "Grey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-12.png",
                 "PictureForNike/Air-Max-12-Grey-1.png",
                 "PictureForNike/Air-Max-12-Grey-2.png",
@@ -910,7 +910,7 @@ controller.add_product("Nike Pegasus 39", 6000, "Women",
     ,[
         {
             "name" : "Mint",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Pegasus-39.png",
                 "PictureForNike/Pegasus-39-Mint-1.png",
                 "PictureForNike/Pegasus-39-Mint-2.png",
@@ -956,7 +956,7 @@ controller.add_product("Nike Air Vampire Max ", 7700, "Women",
     ,[
         {
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Vampire-Max.png",
                 "PictureForNike/Air-Vampire-Max-Red-1.jfif",
                 "PictureForNike/Air-Vampire-Max-Red-2.jfif",
@@ -1002,7 +1002,7 @@ controller.add_product("Nike Fura Plus", 5600, "Women",
     ,[
         {
             "name" : "Puce",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Fura-Plus.png"
                 "PictureForNike/Fura-Plus-Puce-1.png",
                 "PictureForNike/Fura-Plus-Puce-2.png",
@@ -1048,7 +1048,7 @@ controller.add_product("Nike Sum Vanom", 4200, "Women",
     ,[
         {
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Sum-Vanom.png",
                 "PictureForNike/Sum-Vanom-Green-1.png",
                 "PictureForNike/Sum-Vanom-Green-2.jfif",
@@ -1094,7 +1094,7 @@ controller.add_product("Nike Solo Max By Me", 3900, "Women",
     ,[
         {
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Solo-Max-By-Me.png",
                 "PictureForNike/Solo-Max-By-Me-Pink-1.png",
                 "PictureForNike/Solo-Max-By-Me-Pink-2.png",
@@ -1140,7 +1140,7 @@ controller.add_product("Nike Revo Hip", 5200, "Women",
     ,[
         {
             "name" : "Cyan",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Revo-Hip.png",
                 "PictureForNike/Revo-Hip-Cyan-1.png",
                 "PictureForNike/Revo-Hip-Cyan-2.png",
@@ -1186,7 +1186,7 @@ controller.add_product("Nike Air Zion Mood", 4700, "Women",
     ,[
         {
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Zion-Mood.png",
                 "PictureForNike/Air-Zion-Mood-Blue-1.png",
                 "PictureForNike/Air-Zion-Mood-Blue-2.jfif",
@@ -1232,7 +1232,7 @@ controller.add_product("Nike Area 51", 5100, "Women",
     ,[
         {
             "name" : "Purple",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Area-51.png",
                 "PictureForNike/Area-51-Purple-1.jfif",
                 "PictureForNike/Area-51-Purple-2.jfif",
@@ -1278,7 +1278,7 @@ controller.add_product("Nike Air Flash", 4800, "Women",
     ,[
         {
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Flash.png",
                 "PictureForNike/Air-Flash-Pink-1.png",
                 "PictureForNike/Air-Flash-Pink-2.png",
@@ -1324,7 +1324,7 @@ controller.add_product("Nike Novel Min 00", 4000, "Women",
     ,[
         {
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Novel-Min-00.png",
                 "PictureForNike/Novel-Min-00-Blue-1.jfif",
                 "PictureForNike/Novel-Min-00-Blue-2.png",
@@ -1380,7 +1380,7 @@ controller.add_product("Nike Air Mid Sum 4 ", 2700, "Kids",
         }
         ,{
             "name" : "Colorful",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-MidSum-4-Colorful-1.jfif",
                 "PictureForNike/Air-MidSum-4-Colorful-2.png",
                 "PictureForNike/Air-MidSum-4-Colorful-3.png",
@@ -1389,7 +1389,7 @@ controller.add_product("Nike Air Mid Sum 4 ", 2700, "Kids",
                 "PictureForNike/Air-MidSum-4-Colorful-6.png"]
         },{
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-MidSum-4-Red-1.jfif",
                 "PictureForNike/Air-MidSum-4-Red-2.png",
                 "PictureForNike/Air-MidSum-4-Red-3.png",
@@ -1425,7 +1425,7 @@ controller.add_product("Nike Air Max 07", 3000, "Kids",
         }
         ,{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-07-Black.png",
                 "PictureForNike/Air-Max-07-Black-2.png",
                 "PictureForNike/Air-Max-07-Black-3.png",
@@ -1434,7 +1434,7 @@ controller.add_product("Nike Air Max 07", 3000, "Kids",
                 "PictureForNike/Air-Max-07-Black-6.png"]
         },{
             "name" : "Orange",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-07-Orange-1.png",
                 "PictureForNike/Air-Max-07-Orange-2.png",
                 "PictureForNike/Air-Max-07-Orange-3.png",
@@ -1470,7 +1470,7 @@ controller.add_product("Nike Lune Plus", 3500, "Kids",
         }
         ,{
             "name" : "Azure",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Lune-Plus-Azure.png",
                 "PictureForNike/Lune-Plus-Azure-2.png",
                 "PictureForNike/Lune-Plus-Azure-3.png",
@@ -1479,7 +1479,7 @@ controller.add_product("Nike Lune Plus", 3500, "Kids",
                 "PictureForNike/Lune-Plus-Azure-6.png"]
         },{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Lune-Plus-Black-1.png",
                 "PictureForNike/Lune-Plus-Black-2.png",
                 "PictureForNike/Lune-Plus-Black-3.png",
@@ -1504,7 +1504,7 @@ controller.add_product("Nike Air G Cut", 3900, "Kids",
     },[
         {
             "name" : "Orange",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-G-Cut.png",
                 "PictureForNike/Air-G-Cut-Orange-1.png",
                 "PictureForNike/Air-G-Cut-Orange-2.png",
@@ -1515,7 +1515,7 @@ controller.add_product("Nike Air G Cut", 3900, "Kids",
         }
         ,{
             "name" : "Pink",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-G-Cut-Pink.jfif",
                 "PictureForNike/Air-G-Cut-Pink-2.png",
                 "PictureForNike/Air-G-Cut-Pink-3.png",
@@ -1560,7 +1560,7 @@ controller.add_product("Nike Air Max 27'0", 4200, "Kids",
         }
         ,{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-27-0-Blue-1.png",
                 "PictureForNike/Air-Max-27-0-Blue-2.png",
                 "PictureForNike/Air-Max-27-0-Blue-3.png",
@@ -1569,7 +1569,7 @@ controller.add_product("Nike Air Max 27'0", 4200, "Kids",
                 "PictureForNike/Air-Max-27-0-Blue-6.png"]
         },{
             "name" : "Green",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Max-27-0-Green-1.png",
                 "PictureForNike/Air-Max-27-0-Green-2.png",
                 "PictureForNike/Air-Max-27-0-Green-3.png",
@@ -1606,7 +1606,7 @@ controller.add_product("Nike Talunla'", 2900, "Kids",
         }
         ,{
             "name" : "Galaxy",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Talunla-Galaxy-1.png",
                 "PictureForNike/Talunla-Galaxy-2.png",
                 "PictureForNike/Talunla-Galaxy-3.png",
@@ -1615,7 +1615,7 @@ controller.add_product("Nike Talunla'", 2900, "Kids",
                 "PictureForNike/Talunla-Galaxy-6.jfif"]
         },{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Talunla-Black-1.png",
                 "PictureForNike/Talunla-Black-2.png",
                 "PictureForNike/Talunla-Black-3.png",
@@ -1652,7 +1652,7 @@ controller.add_product("Nike Husky", 2100, "Kids",
         }
         ,{
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Husky-Red-1.png",
                 "PictureForNike/Husky-Red-2.jfif",
                 "PictureForNike/Husky-Red-3.png",
@@ -1661,7 +1661,7 @@ controller.add_product("Nike Husky", 2100, "Kids",
                 "PictureForNike/Husky-Red-6.png"]
         },{
             "name" : "Blue",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Husky-Blue-1.png",
                 "PictureForNike/Husky-Blue-2.jfif",
                 "PictureForNike/Husky-Blue-3.png",
@@ -1698,7 +1698,7 @@ controller.add_product("Nike Blast 77-7", 2700, "Kids",
         }
         ,{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Blast-77-7-White-1.png",
                 "PictureForNike/Blast-77-7-White-2.png",
                 "PictureForNike/Blast-77-7-White-3.png",
@@ -1707,7 +1707,7 @@ controller.add_product("Nike Blast 77-7", 2700, "Kids",
                 "PictureForNike/Blast-77-7-White-6.png"]
         },{
             "name" : "Honey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Blast-77-7-Honey-.png",
                 "PictureForNike/Blast-77-7-Honey-2.png",
                 "PictureForNike/Blast-77-7-Honey-3.png",
@@ -1744,7 +1744,7 @@ controller.add_product("Nike Fire Plus", 1900, "Kids",
         }
         ,{
             "name" : "Colorful",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Fire-Plus-Colorful-1.png",
                 "PictureForNike/Fire-Plus-Colorful-2.png",
                 "PictureForNike/Fire-Plus-Colorful-3.png",
@@ -1753,7 +1753,7 @@ controller.add_product("Nike Fire Plus", 1900, "Kids",
                 "PictureForNike/Fire-Plus-Colorful-6.png"]
         },{
             "name" : "Grey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Fire-Plus-Grey-.png",
                 "PictureForNike/Fire-Plus-Grey-2.jfif",
                 "PictureForNike/Fire-Plus-Grey-3.png",
@@ -1789,7 +1789,7 @@ controller.add_product("Nike Air Inmortal 00", 2500, "Kids",
         }
         ,{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Inmortal-00-White-1.png",
                 "PictureForNike/Air-Inmortal-00-White-2.png",
                 "PictureForNike/Air-Inmortal-00-White-3.png",
@@ -1798,7 +1798,7 @@ controller.add_product("Nike Air Inmortal 00", 2500, "Kids",
                 "PictureForNike/Air-Inmortal-00-White-6.png"]
         },{
             "name" : "Black",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Air-Inmortal-00-Black-1.png",
                 "PictureForNike/Air-Inmortal-00-Black-2.jfif",
                 "PictureForNike/Air-Inmortal-00-Black-3.png",
@@ -1834,7 +1834,7 @@ controller.add_product("Nike Novel Dream SP", 2200, "Kids",
         }
         ,{
             "name" : "Red",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Novel-Dream-SP-Red-1.png",
                 "PictureForNike/Novel-Dream-SP-Red-2.png",
                 "PictureForNike/Novel-Dream-SP-Red-3.png",
@@ -1843,7 +1843,7 @@ controller.add_product("Nike Novel Dream SP", 2200, "Kids",
                 "PictureForNike/Novel-Dream-SP-Red-6.png"]
         },{
             "name" : "White",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Novel-Dream-SP-White-1.png",
                 "PictureForNike/Novel-Dream-SP-White-2.png",
                 "PictureForNike/Novel-Dream-SP-White-3.png",
@@ -1880,7 +1880,7 @@ controller.add_product("Nike Tataui 03", 3100, "Kids",
         }
         ,{
             "name" : "Colorful",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Tataui-03-Colorful-1.png",
                 "PictureForNike/Tataui-03-Colorful-2.png",
                 "PictureForNike/Tataui-03-Colorful-3.jfif",
@@ -1889,7 +1889,7 @@ controller.add_product("Nike Tataui 03", 3100, "Kids",
                 "PictureForNike/Tataui-03-Colorful-6.png"]
         },{
             "name" : "Grey",
-            "list_image" : [    
+            "list_images" : [    
                 "PictureForNike/Tataui-03-Grey-1.png",
                 "PictureForNike/Tataui-03-Grey-2.png",
                 "PictureForNike/Tataui-03-Grey-3.jfif",
