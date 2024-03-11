@@ -14,6 +14,7 @@ class ProductSelect(BaseModel):
 
 @router.post("/product-add-cart/", tags =["Product"])
 async def add_to_cart(data : ProductSelect):
+    print(data)
     return controller.add_to_cart(data.customer_id, data.product_id, data.color_id, data.size, data.amout)
 
 @router.delete("/product-delete-cart/{customer_id}/{product_id}/{color_id}/{size}", tags =["Product"])

@@ -23,6 +23,7 @@ minusBtns.forEach((minusBtn, index) => {
             currentAmount--;
             // Update the amount label
             amountLabels[index].textContent = currentAmount;
+            amount = currentAmount;
         }
     });
 });
@@ -36,6 +37,7 @@ plusBtns.forEach((plusBtn, index) => {
         currentAmount++;
         // Update the amount label
         amountLabels[index].textContent = currentAmount;
+        amount = currentAmount
     });
 });
 
@@ -55,10 +57,15 @@ function closeSideCart() {
 }
 
 let  selectedColor = ""
+let selectedColorId = 1
 let  selectedSize = ""
 let productShow = {}
+let amount = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
+
+
+
 
     axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => { 
 
@@ -106,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
         if(index === 0){
             selectedSize = style._ProductStyle__size
+            selectedColorId = style._ProductStyle__product_style_id
         }
 
         if(style._ProductStyle__color === selectedColor){
@@ -168,6 +176,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    document.getElementById("addToCart").addEventListener("click", function(){
+
+
+        if (localStorage.getItem("user_id") == null){
+            window.location.href = "/login.html";
+        }
+        else{
+            if(!selectedSize || !selectedColor){
+
+                alert("Please select size and color")
+
+                return
+            }
+            axios.post("http://localhost:8000/product-add-cart", {
+                product_id: Number(localStorage.getItem("product_id")),
+                customer_id: Number(localStorage.getItem("user_id")),
+                amout:  Number(amount) ,
+                color_id: Number(selectedColorId),
+                size: selectedSize
+            }).then((response) => {
+                console.log(response.data)
+                alert("Add to cart success")
+            })
+        }
+    });
+
+
 });
 
 const handleSelectedColor = (color) => {
@@ -198,7 +233,7 @@ const handleSelectedSize = (size) =>{
 
     list_size.innerHTML = productShow._Product__list_product_style.map((style, index) => {
         if(style._ProductStyle__color === selectedColor){
-
+            selectedColorId = style._ProductStyle__product_style_id
             if(style._ProductStyle__size === size){
                 return `
                 <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn selected">${style._ProductStyle__size}</button>
@@ -215,3 +250,4 @@ const handleSelectedSize = (size) =>{
     }).join("");
 
 }
+
