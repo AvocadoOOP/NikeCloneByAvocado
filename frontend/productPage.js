@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("user").addEventListener("click", function(){
         if (localStorage.getItem("user_id") == null){
-            window.location.href = "/login.html";
+            window.location.href = "/loginRegister.html";
         }
         else{
             window.location.href = "/viewProfile.html";
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (localStorage.getItem("user_id") == null){
-            window.location.href = "/login.html";
+            window.location.href = "/loginRegister.html";
         }
         else{
             if(!selectedSize || !selectedColor){
