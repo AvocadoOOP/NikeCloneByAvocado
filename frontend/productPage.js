@@ -198,6 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }).then((response) => {
                 console.log(response.data)
                 alert("Add to cart success")
+            }).catch((error) => {
+                console.log(error)
+                alert("Add to cart fail")
             })
         }
     });
