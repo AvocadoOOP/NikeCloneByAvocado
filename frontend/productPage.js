@@ -55,6 +55,7 @@ function closeSideCart() {
 }
 
 let  selectedColor = ""
+let  selectedSize = ""
 let productShow = {}
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -84,12 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
     nameProduct.innerHTML = product._Product__product_name;
     category.innerHTML = product._Product__category;
     price.innerHTML = ` <small>฿ </small>${product._Product__price} `;
-
+    let i = 1;
     slide.innerHTML = product._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
-        if (item.split(".")[0][item.split(".")[0].length-1] < "1"){
-            return
+
+        if (item.split(".")[0][item.split(".")[0].length-1] === i.toString()){
+            i += 1;
+            return `<img src="${item}" onclick="img('${item}')">`;
         }
-        return `<img src="${item}" onclick="img('${item}')">`
+        
         
     }).join("");
 
@@ -101,15 +104,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }).join("");
 
     list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
-        if(style._ProductStyle__color === selectedColor){
-            return `
-            <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
-            `
-
+        if(index === 0){
+            selectedSize = style._ProductStyle__size
         }
 
-        return 
+        if(style._ProductStyle__color === selectedColor){
 
+            if(style._ProductStyle__size === selectedSize){
+                return `
+                <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn selected">${style._ProductStyle__size}</button>
+                `
+            }
+            else {
+                return `
+                <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
+                `
+            
+            }
+        }
+        return 
     }).join("");
 
     productShow = product;
@@ -178,4 +191,27 @@ const handleSelectedColor = (color) => {
         }
         return 
     }).join("");
+}
+const handleSelectedSize = (size) =>{
+    selectedSize = size
+    const list_size = document.getElementById("list_size");
+
+    list_size.innerHTML = productShow._Product__list_product_style.map((style, index) => {
+        if(style._ProductStyle__color === selectedColor){
+
+            if(style._ProductStyle__size === size){
+                return `
+                <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn selected">${style._ProductStyle__size}</button>
+                `
+            }
+            else {
+                return `
+                <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
+                `
+            
+            }
+        }
+        return 
+    }).join("");
+
 }

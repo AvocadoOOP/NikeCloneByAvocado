@@ -227,8 +227,9 @@ h5 {
 
 
 .selected {
-    border: 3px solid #ff0000;
+    border: 3px solid #ff0000!important;
     transform: scale(1.1);
+    box-shadow: 4px 4px 15px #939393 !important;
 }
 
 /* size */
@@ -291,10 +292,8 @@ h5 {
 
 /* add to cart button */
 .buttons{
-  position: absolute;
   bottom: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: row; 
 }

@@ -12,7 +12,6 @@ class Product:
         self.add_list_product_style(total_product_style)
 
     def add_list_product_style(self, total_product_style):
-        print(total_product_style)
         for key, val in total_product_style.items() :
             product_style = ProductStyle(key, val[0] , val[1])
             self.__list_product_style.append(product_style)
