@@ -54,3 +54,69 @@ function closeSideCart() {
     cart.classList.remove('open');
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => { 
+
+    const product = response.data;
+    
+    console.log (product);
+    const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
+    const selectedColor = product._Product__list_images[0]?.name;
+    
+
+    console.log(selectedColor)
+
+
+    const  mainImage = document.getElementsByClassName("slide")[0];
+    const nameProduct = document.getElementById("name_product");
+    const category = document.getElementById("category");
+    const price = document.getElementById("price");
+
+    mainImage.src = imageUrl;
+    nameProduct.innerHTML = product._Product__product_name;
+    category.innerHTML = product._Product__category;
+    price.innerHTML = ` <small>฿ </small>${product._Product__price} `;
+
+
+})
+
+
+    Array.from(document.getElementsByClassName("men_product")).forEach((card) => {
+        card.addEventListener("click", function () {
+            localStorage.setItem("product", "Men")
+            window.location.href = "/productList.html";
+        });
+    });
+
+    Array.from(document.getElementsByClassName("women_product")).forEach((card) => {
+        card.addEventListener("click", function () {
+            localStorage.setItem("product", "Women")
+            window.location.href = "/productList.html";
+        });
+    });
+
+    Array.from(document.getElementsByClassName("kids_product")).forEach((card) => {
+        card.addEventListener("click", function () {
+            localStorage.setItem("product", "Kids")
+            window.location.href = "/productList.html";
+        });
+    });
+
+    Array.from(document.getElementsByClassName("all_product")).forEach((card) => {
+        card.addEventListener("click", function () {
+            localStorage.setItem("product", "all")
+            window.location.href = "/productList.html";
+        });
+    });
+
+    document.getElementById("user").addEventListener("click", function(){
+        if (localStorage.getItem("user_id") == null){
+            window.location.href = "/login.html";
+        }
+        else{
+            window.location.href = "/viewProfile.html";
+        }
+    });
+
+});

@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("men_product")).forEach((card) => {
         card.addEventListener("click", function() {
-            localStorage.setItem("product" , "men")
+            localStorage.setItem("product" , "Men")
             window.location.href = "/productList.html";
         });
     });
 
     Array.from(document.getElementsByClassName("women_product")).forEach((card) => {
         card.addEventListener("click", function() {
-            localStorage.setItem("product" , "women")
+            localStorage.setItem("product" , "Women")
             window.location.href = "/productList.html";
         });
     });
