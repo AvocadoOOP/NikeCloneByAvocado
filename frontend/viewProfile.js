@@ -152,3 +152,9 @@ const showAddress = (address_id) => {
     localStorage.setItem("address_id", address_id)
     window.location.href = "/showAddress.html";
 }
+
+const showCard = (card_id) => {
+
+    localStorage.setItem("card_id", card_id)
+    window.location.href = "/showCreditCard.html";
+}
