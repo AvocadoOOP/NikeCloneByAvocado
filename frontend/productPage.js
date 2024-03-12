@@ -238,6 +238,23 @@ const handleSelectedColor = (color) => {
         }
         return 
     }).join("");
+
+    const slide = document.getElementById("slider");
+    const  mainImage = document.getElementsByClassName("slide")[0];
+
+
+    let i = 1;
+    slide.innerHTML = productShow._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
+        if(index === 0){
+            mainImage.src = item;
+        }
+        if (item.split(".")[0][item.split(".")[0].length-1] === i.toString()){
+            i += 1;
+            return `<img src="${item}" onclick="img('${item}')">`;
+        }
+        
+        
+    }).join("");
 }
 const handleSelectedSize = (size) =>{
     selectedSize = size
