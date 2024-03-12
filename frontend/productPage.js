@@ -56,9 +56,9 @@ function closeSideCart() {
     cart.classList.remove('open');
 }
 
-let  selectedColor = ""
+let selectedColor = ""
 let selectedColorId = 1
-let  selectedSize = ""
+let selectedSize = ""
 let productShow = {}
 let amount = 1;
 
@@ -67,76 +67,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => { 
+    axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => {
 
-    const product = response.data;
-    
-    console.log (product);
-    const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
-    selectedColor = product._Product__list_images[0]?.name;
-    
+        const product = response.data;
 
-    console.log(selectedColor)
+        console.log(product);
+        const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
+        selectedColor = product._Product__list_images[0]?.name;
 
 
-    const  mainImage = document.getElementsByClassName("slide")[0];
-    const nameProduct = document.getElementById("name_product");
-    const category = document.getElementById("category");
-    const price = document.getElementById("price");
-    const slide = document.getElementById("slider");
-    const list_colors = document.getElementById("list_colors");
-    const list_size = document.getElementById("list_size");
-    
+        console.log(selectedColor)
 
-    mainImage.src = imageUrl;
-    nameProduct.innerHTML = product._Product__product_name;
-    category.innerHTML = product._Product__category;
-    price.innerHTML = ` <small>฿ </small>${product._Product__price} `;
-    let i = 1;
-    slide.innerHTML = product._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
 
-        if (item.split(".")[0][item.split(".")[0].length-1] === i.toString()){
-            i += 1;
-            return `<img src="${item}" onclick="img('${item}')">`;
-        }
-        
-        
-    }).join("");
+        const mainImage = document.getElementsByClassName("slide")[0];
+        const nameProduct = document.getElementById("name_product");
+        const category = document.getElementById("category");
+        const price = document.getElementById("price");
+        const slide = document.getElementById("slider");
+        const list_colors = document.getElementById("list_colors");
+        const list_size = document.getElementById("list_size");
 
-    list_colors.innerHTML = product._Product__list_images.map((color, index) => {
-        if (index === 0){
-            return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" class="selected"></span>`
-        }
-        return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" ></span>`
-    }).join("");
 
-    list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
-        if(index === 0){
-            selectedSize = style._ProductStyle__size
-            selectedColorId = style._ProductStyle__product_style_id
-        }
+        mainImage.src = imageUrl;
+        nameProduct.innerHTML = product._Product__product_name;
+        category.innerHTML = product._Product__category;
+        price.innerHTML = ` <small>฿ </small>${product._Product__price} `;
+        let i = 1;
+        slide.innerHTML = product._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
 
-        if(style._ProductStyle__color === selectedColor){
+            if (item.split(".")[0][item.split(".")[0].length - 1] === i.toString()) {
+                i += 1;
+                return `<img src="${item}" onclick="img('${item}')">`;
+            }
 
-            if(style._ProductStyle__size === selectedSize){
-                return `
+
+        }).join("");
+
+        list_colors.innerHTML = product._Product__list_images.map((color, index) => {
+            if (index === 0) {
+                return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" class="selected"></span>`
+            }
+            return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" ></span>`
+        }).join("");
+
+        list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
+            if (index === 0) {
+                selectedSize = style._ProductStyle__size
+                selectedColorId = style._ProductStyle__product_style_id
+            }
+
+            if (style._ProductStyle__color === selectedColor) {
+
+                if (style._ProductStyle__size === selectedSize) {
+                    return `
                 <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn selected">${style._ProductStyle__size}</button>
                 `
-            }
-            else {
-                return `
+                }
+                else {
+                    return `
                 <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
                 `
-            
+
+                }
             }
-        }
-        return 
-    }).join("");
+            return
+        }).join("");
 
-    productShow = product;
-    
+        productShow = product;
 
-})
+
+    })
 
 
     Array.from(document.getElementsByClassName("men_product")).forEach((card) => {
@@ -167,23 +167,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.getElementById("user").addEventListener("click", function(){
-        if (localStorage.getItem("user_id") == null){
+    document.getElementById("user").addEventListener("click", function () {
+        if (localStorage.getItem("user_id") == null) {
             window.location.href = "/loginRegister.html";
         }
-        else{
+        else {
             window.location.href = "/viewProfile.html";
         }
     });
 
-    document.getElementById("addToCart").addEventListener("click", function(){
+    document.getElementById("addToCart").addEventListener("click", function () {
 
 
-        if (localStorage.getItem("user_id") == null){
+        if (localStorage.getItem("user_id") == null) {
             window.location.href = "/loginRegister.html";
         }
-        else{
-            if(!selectedSize || !selectedColor){
+        else {
+            if (!selectedSize || !selectedColor) {
 
                 alert("Please select size and color")
 
@@ -192,30 +192,89 @@ document.addEventListener("DOMContentLoaded", function () {
             axios.post("http://localhost:8000/product-add-cart", {
                 product_id: Number(localStorage.getItem("product_id")),
                 customer_id: Number(localStorage.getItem("user_id")),
-                amout:  Number(amount) ,
+                amout: Number(amount),
                 color_id: Number(selectedColorId),
                 size: selectedSize
             }).then((response) => {
                 console.log(response.data)
                 alert("Add to cart success")
+                getData();
             }).catch((error) => {
                 console.log(error)
                 alert("Add to cart fail")
             })
+
+            
         }
     });
 
-    document.getElementById("pay_button").addEventListener("click", function(){
-        if (localStorage.getItem("user_id") == null){
+    document.getElementById("pay_button").addEventListener("click", function () {
+        if (localStorage.getItem("user_id") == null) {
             window.location.href = "/loginRegister.html";
         }
-        else{
+        else {
             window.location.href = "/confirmOrder.html";
         }
     });
 
+    // Assuming this is inside an async function
+
+    
+
+    getData();
+
+
+
 
 });
+
+const getData = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8000/cart/${localStorage.getItem("user_id")}`);
+        const cart = response.data;
+
+        console.log(cart)
+        document.getElementById("subtotal_price").innerHTML = cart._ShoppingCart__total_price;
+        const cart_items = document.getElementById("cart_items");
+
+        const cartItemsHtml = await Promise.all(cart._ShoppingCart__list_product_cart.map(async (product, index) => {
+            try {
+                const response = await axios.get(`http://localhost:8000/product-detail/${product._SelectedProduct__id}`);
+                const productDetail = response.data;
+                console.log(productDetail)
+                console.log(product)
+                const list_colors = productDetail._Product__list_product_style.map((color, index) => {
+                    if (color.name === product._ProductStyle__product_style_id) {
+                        return color
+                    }
+                })
+                console.log(list_colors)
+                return `<div class="cart_item">
+                <div class="remove_item">
+                  <span>&times;</span>
+                </div>
+                
+                <div class="item_img">
+                  <img src="PictureForNike/air-force-1-07-black-1.png"/>
+                </div>
+                
+                <div class="item_details">
+                  <p>${productDetail._Product__product_name}</p>
+                  <strong> <small>฿ </small> ${productDetail._Product__price}</strong>
+                  <p style="font-size:20px;">Amount : ${product._SelectedProduct__amount}</p>
+                </div>
+              </div>`
+            } catch (error) {
+                console.error("Error fetching product details:", error);
+                return ''; // Return an empty string or some error placeholder
+            }
+        }));
+
+        cart_items.innerHTML = cartItemsHtml.join("");
+    } catch (error) {
+        console.error("Error fetching cart:", error);
+    }
+};
 
 const handleSelectedColor = (color) => {
     selectedColor = color;
@@ -223,47 +282,47 @@ const handleSelectedColor = (color) => {
     const list_size = document.getElementById("list_size");
 
     list_colors.innerHTML = productShow._Product__list_images.map((color, index) => {
-        if (color.name === selectedColor){
+        if (color.name === selectedColor) {
             return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" class="selected"></span>`
         }
 
         return `<span onclick="handleSelectedColor('${color.name}')" style="background-color: ${color.name}" ></span>`
     }).join("");
-    
+
     list_size.innerHTML = productShow._Product__list_product_style.map((style, index) => {
-        if(style._ProductStyle__color === selectedColor){
+        if (style._ProductStyle__color === selectedColor) {
             return `
             <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
             `
         }
-        return 
+        return
     }).join("");
 
     const slide = document.getElementById("slider");
-    const  mainImage = document.getElementsByClassName("slide")[0];
+    const mainImage = document.getElementsByClassName("slide")[0];
 
 
     let i = 1;
     slide.innerHTML = productShow._Product__list_images.filter(color => color.name === selectedColor)[0].list_images.map((item, index) => {
-        if(index === 0){
+        if (index === 0) {
             mainImage.src = item;
         }
-        if (item.split(".")[0][item.split(".")[0].length-1] === i.toString()){
+        if (item.split(".")[0][item.split(".")[0].length - 1] === i.toString()) {
             i += 1;
             return `<img src="${item}" onclick="img('${item}')">`;
         }
-        
-        
+
+
     }).join("");
 }
-const handleSelectedSize = (size) =>{
+const handleSelectedSize = (size) => {
     selectedSize = size
     const list_size = document.getElementById("list_size");
 
     list_size.innerHTML = productShow._Product__list_product_style.map((style, index) => {
-        if(style._ProductStyle__color === selectedColor){
+        if (style._ProductStyle__color === selectedColor) {
             selectedColorId = style._ProductStyle__product_style_id
-            if(style._ProductStyle__size === size){
+            if (style._ProductStyle__size === size) {
                 return `
                 <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn selected">${style._ProductStyle__size}</button>
                 `
@@ -272,10 +331,10 @@ const handleSelectedSize = (size) =>{
                 return `
                 <button onclick="handleSelectedSize('${style._ProductStyle__size}')"  class="size-btn">${style._ProductStyle__size}</button>
                 `
-            
+
             }
         }
-        return 
+        return
     }).join("");
 
 }
