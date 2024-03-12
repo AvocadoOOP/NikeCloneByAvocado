@@ -205,6 +205,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    document.getElementById("pay_button").addEventListener("click", function(){
+        if (localStorage.getItem("user_id") == null){
+            window.location.href = "/loginRegister.html";
+        }
+        else{
+            window.location.href = "/confirmOrder.html";
+        }
+    });
+
 
 });
 
