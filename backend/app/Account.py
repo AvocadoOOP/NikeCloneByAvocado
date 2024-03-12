@@ -26,11 +26,11 @@ def register(data : RegisterIn):
 def login(data : LoginIn):
     return controller.login(data.email, data.password)
 
-@router.get("/profile-view/{order_id}/", tags =["Profile"])
+@router.get("/profile-view/", tags =["Profile"])
 def view_profile(customer_id : int):
     return controller.view_profile(customer_id)
 
-@router.get("/account-detail/{order_id}/", tags =["Profile"])
+@router.get("/account-detail/", tags =["Profile"])
 def detail_account(customer_id : int):
     return controller.view_account_detail(customer_id)
 

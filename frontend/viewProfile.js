@@ -27,13 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.getElementById("user").addEventListener("click", function(){
-        if (localStorage.getItem("user_id") == null){
+    document.getElementById("user").addEventListener("click", function () {
+        if (localStorage.getItem("user_id") == null) {
             window.location.href = "/loginRegister.html";
         }
-        else{
+        else {
             window.location.href = "/viewProfile.html";
         }
+    });
+
+    document.getElementById("logout").addEventListener("click", function () {
+        localStorage.removeItem("user_id");
+        window.location.href = "/loginRegister.html";
     });
 
 
@@ -72,16 +77,60 @@ document.addEventListener("DOMContentLoaded", function () {
         four.classList.add("active");
         five.classList.remove("active");
     }
-    five.onclick = function () {
-        one.classList.add("active");
-        two.classList.add("active");
-        three.classList.add("active");
-        four.classList.add("active");
-        five.classList.add("active");
+
+
+    try {
+
+        five.onclick = function () {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.add("active");
+            five.classList.add("active");
+        }
+    } catch (error) {
+
     }
+
+
+
+
+    axios.get("http://localhost:8000/profile-view/?customer_id=" + localStorage.getItem("user_id")).then((response) => {
+        console.log(response.data)
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+
+        username.innerHTML = response.data[0];
+        email.innerHTML = response.data[1];
+        phone.innerHTML = response.data[2];
+
+
+    })
+
+    axios.get("http://localhost:8000/account-detail/?customer_id=" + localStorage.getItem("user_id")).then((response) => {
+        console.log(response.data)
+        const data = response.data[3][0];
+        console.log(data)
+        const list_address = document.getElementById("list_address");
+
+        list_address.innerHTML = data.map((address, index) => {
+            console.log(address)
+            return ` <a id="drop-down-address1" onclick="showAddress('${address._Address__id}')" >${address._Address__house_number}</a>`
+        }).join("");
+
+
+        list_address.innerHTML += `<a id="drop-down-more-address" href="./addAddress.html">Add New Address</a>`
+
+    })
 
 
 
 });
 
 
+const showAddress = (address_id) => {
+
+    localStorage.setItem("address_id", address_id)
+    window.location.href = "/showAddress.html";
+}

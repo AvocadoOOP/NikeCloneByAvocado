@@ -22,7 +22,7 @@
 
         <div class = "nav-menu-wrapper">
             <ul class = "nav-menu">
-                <li class="nav-item"><a href="index.html">HOME</a></li>
+                <li class="nav-item"><a href="./index.html">HOME</a></li>
                 <li class = "nav-item"><a class="all_product">PRODUCTS</a></li>
                 <li class = "nav-item"><a class="men_product">MEN</a></li>
                 <li class = "nav-item"><a class="women_product">WOMEN</a></li>
@@ -63,10 +63,10 @@
                     <span id="address">
                         <div class="address-button">
                             <button class="address-dropdown-button">View My Address &nbsp; ▼</button>
-                            <div class="dropdown-content">
+                            <div id="list_address" class="dropdown-content">
                                 <a id="drop-down-address1" href="#">Address 1</a>
                                 <a id="drop-down-address2" href="#">Address 2</a>
-                                <a id="drop-down-more-address" href="#">Add New Address</a>
+                                <a id="drop-down-more-address" href="./addAddress.html">Add New Address</a>
 
                             </div>
                         </div>
@@ -92,7 +92,7 @@
             <button class="edit-btn">EDIT</button>
         </div>
         <div class="buttonForLogOut">
-            <button class="log-out-btn">LOG OUT</button>
+            <button id="logout" class="log-out-btn">LOG OUT</button>
         </div>
     </div>
     
@@ -192,6 +192,7 @@
           <script src="https://use.fontawesome.com/01f444492d.js"></script>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src = "viewProfile.js"></script>
 </body>
 </html>

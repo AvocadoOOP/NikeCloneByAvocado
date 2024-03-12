@@ -37,6 +37,16 @@ class Controller:
                 return product   
         return {"Data ": "Not found "} 
     
+    def search_product_by_name_for_customer(self, keyword):
+        matching_products = []
+        for product in self.__list_product:
+            if keyword.lower() in product.product_name.lower():
+                matching_products.append(product)
+        if matching_products:
+            return matching_products
+        else:
+            return {"Data": "Not found"}
+        
     def search_product_by_name(self, name):
         for product in self.__list_product :
             if name == product.product_name:
@@ -234,9 +244,9 @@ class Controller:
             return customer.name, customer.email, customer.phone, result
         return customer  
     
-    def add_product(self, product_name, price, category, product_style , list_images ):
+    def add_product(self, product_name, price, category, product_style  ):
         if self.search_product_by_name(product_name) == {"Data ": "Not found "} :
-            self.add_to_product_list(Product(product_name, price, category, product_style,list_images))
+            self.add_to_product_list(Product(product_name, price, category, product_style))
             return {"data": "added successfully"}
         return {"data": "added not successfully"}
     
