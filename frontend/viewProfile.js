@@ -116,13 +116,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         list_address.innerHTML = data.map((address, index) => {
             console.log(address)
-            return ` <a id="drop-down-address1" onclick="showAddress('${address._Address__id}')" >${address._Address__house_number}</a>`
+            return ` <a id="drop-down-address${index+1}" onclick="showAddress('${address._Address__id}')" >${address._Address__house_number}</a>`
         }).join("");
 
 
         list_address.innerHTML += `<a id="drop-down-more-address" href="./addAddress.html">Add New Address</a>`
 
     })
+
+
+    axios.get("http://localhost:8000/credit-list/" + localStorage.getItem("user_id")).then((response) => {
+        console.log(response.data)
+        const data = response.data;
+        console.log(data)
+        const list_credit = document.getElementById("list_credit");
+
+        list_credit.innerHTML = data.map((card, index) => {
+            console.log(card)
+            return ` <a id="drop-down-CreditCard${index+1}" onclick="showCard('${card._CreditCard__id}')" >${card._CreditCard__card_name}</a>`
+        }).join("");
+
+
+        list_credit.innerHTML += `<a id="drop-down-more-CreditCard"  href="./addCreditCard.html">Add New Credit Card</a>`
+
+    })
+    
 
 
 

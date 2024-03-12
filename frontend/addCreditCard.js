@@ -1,6 +1,8 @@
 const cardTypeInputs = document.querySelectorAll('input[name="type_card"]');
 const backImage = document.querySelector('.back img[src="PictureForNike/visa.png"]');
 
+let selectedCardType = "";
+
 cardTypeInputs.forEach(input => {
     input.addEventListener('change', changeCardImage);
 });
@@ -15,16 +17,19 @@ function changeCardImage() {
         masterImage.style.display = 'none';
         jcbImage.style.display = 'block';
         backImage.src = 'PictureForNike/jcb.png';
+        selectedCardType = "JCB";
     } else if (this.value === "Master") {
         visaImage.style.display = 'none';
         jcbImage.style.display = 'none';
         masterImage.style.display = 'block';
         backImage.src = 'PictureForNike/master.png';
+        selectedCardType = "Master";
     } else {
         masterImage.style.display = 'none';
         jcbImage.style.display = 'none';
         visaImage.style.display = 'block';
         backImage.src = 'PictureForNike/visa.png';
+        selectedCardType = "Visa";
     }
 }
 
@@ -61,3 +66,42 @@ document.querySelector('.submit-btn').onclick = () => {
         return;
     }
 };
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    if (localStorage.getItem("user_id") == null){
+        window.location.href = "/loginRegister.html";
+    }
+
+    document.getElementById("Back").addEventListener("click", function(){
+
+        window.location.href = "/viewProfile.html";
+    });
+
+    document.getElementById("Submit").addEventListener("click", function(){
+
+        
+        axios.post("http://localhost:8000/credit-add", {
+            "customer_id": Number(localStorage.getItem("user_id")),
+            "type_card": selectedCardType,
+            "card_name": document.getElementById("card_name").value,
+            "number": document.getElementById("number").value,
+            "pin_number": Number(document.getElementById("pin").value),
+          }).then((response) => {
+            alert("Address added successfully")
+            console.log(response)
+            window.location.href = "/viewProfile.html";
+          }).catch((error) => {
+            alert("Please fill all the fields")
+          });
+
+
+
+
+    });
+
+
+
+});
