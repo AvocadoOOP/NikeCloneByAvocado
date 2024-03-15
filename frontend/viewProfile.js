@@ -99,11 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(response.data)
         const username = document.getElementById("username");
         const email = document.getElementById("email");
-        const phone = document.getElementById("phone");
 
         username.innerHTML = response.data[0];
         email.innerHTML = response.data[1];
-        phone.innerHTML = response.data[2];
+
 
 
     })
@@ -159,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return ` <div class="status-delivery-pad"> 
             <div class="container">
                 <div class="head">
-                    <p class="head_1">Order <span id="order_number">${order._Order__order_id}</span></p>
+                    <p class="head_1">Order <span id="order_number">${String(order._Order__order_id).padStart(4, '0')}</span></p>
                 </div>
         
                     <ul>
@@ -203,6 +202,30 @@ document.addEventListener("DOMContentLoaded", function () {
             
         </div>`
         }).join("");
+
+        const list_history = document.getElementById("list_history");
+        const total_orders = document.getElementById("total_orders");
+
+        total_orders.innerHTML = data.length;
+        
+        list_history.innerHTML = data.map((order, index) => {
+
+            let date = new Date(order._Order__date);
+            let formattedDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+
+
+            return `<div class="flex-row order-row">
+            <div class="flex-item order-row-item order-num">${String(order._Order__order_id).padStart(4, '0')}</div>
+            <div class="flex-item order-row-item">${formattedDate}</div>
+            <div class="flex-item order-row-item num-of-items">${order._Order__shopping_cart._ShoppingCart__amount
+
+            }</div>
+            <div class="flex-item order-row-item">฿${order._Order__shopping_cart._ShoppingCart__total_price}</div>
+            <div class="flex-end-cap"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+          </div>`
+        
+        }).join("");
+
     })
 
 

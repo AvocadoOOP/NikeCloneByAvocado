@@ -1,5 +1,6 @@
 from .Payment import Payment
 from .Delivery import Delivery
+import datetime
 class Order:
     __order_id = 0
     def __init__(self, address, shopping_cart, customer_id):
@@ -12,6 +13,7 @@ class Order:
         self.__delivery = Delivery()
         self.__payment_status = None
         self.__delivery_status = None
+        self.__date = datetime.datetime.now()
 
     def pay_money(self, credit_card):
         price = self.__shopping_cart.total_price
