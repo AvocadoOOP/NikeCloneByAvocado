@@ -56,17 +56,6 @@ document.querySelector('.cvv-input').oninput = () =>{
 }
 
 
-document.querySelector('.submit-btn').onclick = () => {
-    if (!document.querySelector('input[name="type_card"]:checked')) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Password and confirm password do not match!',
-        })
-        return;
-    }
-};
-
 
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -81,8 +70,12 @@ document.querySelector('.submit-btn').onclick = () => {
     });
 
     document.getElementById("Submit").addEventListener("click", function(){
-
-        
+          
+        if (document.getElementById("card_name").value == "" || document.getElementById("number").value == "" || document.getElementById("pin").value == "" || selectedCardType == ""){
+            alert("Please fill all the fields")
+            return;
+        }
+       
         axios.post("http://localhost:8000/credit-add", {
             "customer_id": Number(localStorage.getItem("user_id")),
             "type_card": selectedCardType,

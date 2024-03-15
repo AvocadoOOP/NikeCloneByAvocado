@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("Submit").addEventListener("click", function(){
+        event.preventDefault();
+
+        if(document.getElementById("name").value == "" || document.getElementById("phone").value == "" || document.getElementById("number").value == "" || document.getElementById("soi").value == "" || document.getElementById("road").value == "" || document.getElementById("province").value == "" || document.getElementById("postal_code").value == ""){ 
+            alert("Please fill all the fields")
+            return;
+        }
+
         axios.post("http://localhost:8000/address-add", {
             "recipient_name" : document.getElementById("name").value,
             "phone": document.getElementById("phone").value,
@@ -22,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }).then((response) => {
             alert("Address added successfully")
             console.log(response)
-            window.location.href = "./viewProfile.html";
+            window.location.href = "/viewProfile.html";
           }).catch((error) => {
             alert("Please fill all the fields")
           });

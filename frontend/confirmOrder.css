@@ -79,7 +79,10 @@ body {
     font-size: smaller;
 
 }
+#list_address a {
+    cursor: pointer;
 
+}
 @media (max-width: 768px) {
     .confirm_address,
     .confirm_creditCard,
