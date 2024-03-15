@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         list_size.innerHTML = product._Product__list_product_style.map((style, index) => {
             if (index === 0) {
-                selectedSize = style._ProductStyle__size
+                // selectedSize = style._ProductStyle__size
                 selectedColorId = style._ProductStyle__product_style_id
             }
 
@@ -299,6 +299,7 @@ const getData = async () => {
 
 const handleSelectedColor = (color) => {
     selectedColor = color;
+    selectedSize = ""
     const list_colors = document.getElementById("list_colors");
     const list_size = document.getElementById("list_size");
 
