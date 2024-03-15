@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("men_product")).forEach((card) => {
         card.addEventListener("click", function() {
+            localStorage.removeItem("search_input");
             localStorage.setItem("product" , "Men")
             window.location.href = "/productList.html";
         });
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("women_product")).forEach((card) => {
         card.addEventListener("click", function() {
+            localStorage.removeItem("search_input");
             localStorage.setItem("product" , "Women")
             window.location.href = "/productList.html";
         });
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("kids_product")).forEach((card) => {
         card.addEventListener("click", function() {
+            localStorage.removeItem("search_input");
             localStorage.setItem("product" , "Kids")
             window.location.href = "/productList.html";
         });
@@ -39,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Array.from(document.getElementsByClassName("all_product")).forEach((card) => {
         card.addEventListener("click", function() {
+            localStorage.removeItem("search_input");
             localStorage.setItem("product" , "all")
             window.location.href = "/productList.html";
         });
@@ -68,6 +72,14 @@ document.addEventListener("DOMContentLoaded", function() {
             element.classList.remove("active");
         });
         this.classList.add("active");
+    });
+
+
+    document.getElementById("search_input").addEventListener("keypress" , function(e){
+        if (e.key == "Enter"){
+            localStorage.setItem("search_input" , this.value);
+            window.location.href = "/productList.html";
+        }
     });
 });
 

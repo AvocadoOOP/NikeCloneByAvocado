@@ -124,7 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
+    document.getElementById("search_input").addEventListener("keypress" , function(e){
+        if (e.key == "Enter"){
+            localStorage.setItem("search_input" , this.value);
+            window.location.href = "/productList.html";
+        }
+    });
 
+    
     axios.get("http://localhost:8000/credit-list/" + localStorage.getItem("user_id")).then((response) => {
         console.log(response.data)
         const data = response.data;
