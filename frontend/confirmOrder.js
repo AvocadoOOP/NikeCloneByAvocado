@@ -16,7 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("Submit").addEventListener("click", function () {
+        axios.get(`http://localhost:8000/pay-money/${localStorage.getItem("user_id")}/${localStorage.getItem("address_id")}/${localStorage.getItem("card_number")}`).then((response) => {
+        
+        console.log(response.data)
+    
+    
+    });
         window.location.href = "/viewProfile.html";
+
+
     });
 
 
@@ -95,6 +103,8 @@ const showCard = (card_id) => {
 
         document.getElementById(`drop-down-CreditCard${card_id}`).classList.add("selected_credit");
 
+        localStorage.setItem("card_id", card_id)
+        localStorage.setItem("card_number", card._CreditCard__number)
     })
 
 
@@ -144,7 +154,7 @@ const showAddress = (address_id) => {
 
 
 
-
+        localStorage.setItem("address_id", address_id)
     });
 
 }

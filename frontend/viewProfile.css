@@ -15,6 +15,17 @@
     font-optical-sizing:auto;
     font-style:normal;
 }
+#list-order{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+}
+#list-order div{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+}
   
 a:link {
     color: rgb(255, 255, 255);

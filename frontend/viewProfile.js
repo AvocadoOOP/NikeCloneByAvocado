@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const three = document.querySelector(".three");
     const four = document.querySelector(".four");
     const five = document.querySelector(".five");
-
+    try {
     one.onclick = function () {
         one.classList.add("active");
         two.classList.remove("active");
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    try {
+    
 
         five.onclick = function () {
             one.classList.add("active");
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         list_address.innerHTML = data.map((address, index) => {
             console.log(address)
-            return ` <a id="drop-down-address${index+1}" onclick="showAddress('${address._Address__id}')" >${address._Address__house_number}</a>`
+            return ` <a id="drop-down-address${index + 1}" onclick="showAddress('${address._Address__id}')" >${address._Address__house_number}</a>`
         }).join("");
 
 
@@ -124,14 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-    document.getElementById("search_input").addEventListener("keypress" , function(e){
-        if (e.key == "Enter"){
-            localStorage.setItem("search_input" , this.value);
+    document.getElementById("search_input").addEventListener("keypress", function (e) {
+        if (e.key == "Enter") {
+            localStorage.setItem("search_input", this.value);
             window.location.href = "/productList.html";
         }
     });
 
-    
+
     axios.get("http://localhost:8000/credit-list/" + localStorage.getItem("user_id")).then((response) => {
         console.log(response.data)
         const data = response.data;
@@ -140,14 +140,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
         list_credit.innerHTML = data.map((card, index) => {
             console.log(card)
-            return ` <a id="drop-down-CreditCard${index+1}" onclick="showCard('${card._CreditCard__id}')" >${card._CreditCard__card_name}</a>`
+            return ` <a id="drop-down-CreditCard${index + 1}" onclick="showCard('${card._CreditCard__id}')" >${card._CreditCard__number}</a>`
         }).join("");
 
 
         list_credit.innerHTML += `<a id="drop-down-more-CreditCard"  href="./addCreditCard.html">Add New Credit Card</a>`
 
     })
-    
+
+    axios.get("http://localhost:8000/order/" + localStorage.getItem("user_id")).then((response) => {
+        console.log(response.data)
+        const data = response.data;
+        console.log(data)
+        const list_order = document.getElementById("list-order");
+
+        list_order.innerHTML = data.map((order, index) => {
+            console.log(order)
+            return ` <div class="status-delivery-pad"> 
+            <div class="container">
+                <div class="head">
+                    <p class="head_1">Order <span id="order_number">${order._Order__order_id}</span></p>
+                </div>
+        
+                    <ul>
+                        <li>
+                            <i class="icon uil uil-bill"></i>
+                            <div class="progress one active">
+                                <p>1</p>
+                                <i class="ic uil uil-check"></i>
+                            </div>
+                            <p class="text">Order Placed</p>
+                        </li>
+                        <li>
+                            <i class="icon uil uil-box"></i>
+                            <div class="progress two">
+                                <p>2</p>
+                                <i class="ic uil uil-check"></i>
+                            </div>
+                            <p class="text">Order Shipped</p>
+                        </li>
+                        <li>
+                            <i class="icon uil uil-truck"></i>
+                            <div class="progress three">
+                                <p>3</p>
+                                <i class="ic uil uil-check"></i>
+                            </div>
+                            <p class="text">On The Way</p>
+                        </li>
+                        <li>
+                            <i class="icon uil uil-house-user"></i>
+                            <div class="progress four">
+                                <p>4</p>
+                                <i class="ic uil uil-check"></i>
+                            </div>
+                            <p class="text">Order Arrived</p>
+                        </li>
+                    </ul>
+                
+                
+                
+            </div>
+            
+        </div>`
+        }).join("");
+    })
+
 
 
 

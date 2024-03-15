@@ -10,12 +10,12 @@ class ProductSelect(BaseModel):
     product_id: int
     color_id: int
     size : str
-    amout : int
+    amount : int
 
 @router.post("/product-add-cart/", tags =["Product"])
 async def add_to_cart(data : ProductSelect):
     print(data)
-    return controller.add_to_cart(data.customer_id, data.product_id, data.color_id, data.size, data.amout)
+    return controller.add_to_cart(data.customer_id, data.product_id, data.color_id, data.size, data.amount)
 
 @router.delete("/product-delete-cart/{customer_id}/{product_id}/{color_id}/{size}", tags =["Product"])
 def delete_from_cart(customer_id : int ,product_id : int, color_id : int, size : str):
@@ -23,4 +23,4 @@ def delete_from_cart(customer_id : int ,product_id : int, color_id : int, size :
 
 @router.get("/cart/{customer_id}", tags =["Product"])
 def get_shopping_cart(customer_id : int):
-    return controller.shopping_cart(customer_id)
+    return controller.view_shopping_cart(customer_id)

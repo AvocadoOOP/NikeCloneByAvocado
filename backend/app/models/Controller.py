@@ -68,13 +68,13 @@ class Controller:
     
     def search_admin_by_id(self, admin_id):
         for admin in self.__list_admin:
-            if admin.admin_id == admin_id :
+            if admin.account.id == admin_id :
                 return admin
         return {"Data ": "You haven't already Login"} 
     
     def register(self, name, email, password):
         for admin in self.__list_admin :
-            if admin.email == email :
+            if admin.account.email == email :
                 return {"data" : "You already have an account"}
         for customer in self.__list_customer:
             if customer.account.email == email :
@@ -87,6 +87,10 @@ class Controller:
             if customer.account.email == email:
                 if customer.account.password == password:
                     return customer.account.id
+        for admin in self.__list_admin :
+            if admin.account.email == email :
+                if admin.account.password == password:
+                    return admin.account.id
         return{"data": "Please check your email or password and try again!"}
     
     def add_to_cart(self, customer_id, product_id, color_id, size, amount):
@@ -103,7 +107,7 @@ class Controller:
         result = customer.delete_from_cart(product, color_id, size)
         return result
     
-    def shopping_cart(self, customer_id):
+    def view_shopping_cart(self, customer_id):
         customer = self.search_customer_by_id(customer_id) 
         if customer != {"Data ": "You haven't already register"}  :
             result = customer.shopping_cart
@@ -191,19 +195,16 @@ class Controller:
             return result
         return customer
     
-    def create_order(self, customer_id, address_id):
-        customer = self.search_customer_by_id(customer_id) 
-        result = customer.create_order(address_id, customer_id)
-        self.__list_order.append(result[1])
-        return result[0]
-    
     def view_order(self, customer_id):
         customer = self.search_customer_by_id(customer_id) 
         result = customer.list_order
         return result
     
-    def pay_money(self, customer_id, number, order_id):
+    def pay_money(self, customer_id, address_id, number):
         customer = self.search_customer_by_id(customer_id) 
+        list_credit_card ,order = customer.create_order(address_id, customer_id)
+        order_id = order.order_id
+        self.__list_order.append(order)
         result = customer.pay_money(number, order_id)
         if result == {"data": "successfull"}:
             for selected_product in customer.shopping_cart.list_product_cart:
@@ -225,14 +226,15 @@ class Controller:
             if order.order_id == order_id:
                 admin = self.search_admin_by_id(admin_id)
                 result = admin.updete_status(order, status)
-                customer = self.search_customer_by_id(order.customer_id)
+                customer_id = order.customer_id
+                customer = self.search_customer_by_id(customer_id)
                 customer.update_history()
                 return result
         return  {"Data ": "Not found"}
     
     def view_profile(self, customer_id):
         customer = self.search_customer_by_id(customer_id) 
-        if customer != {"Data ": "You haven't already register"}  :
+        if customer != {"Data ": "You haven't already register"} :
             result = customer.view_profile()
             return customer.name,customer.email, customer.phone, result
         return customer   

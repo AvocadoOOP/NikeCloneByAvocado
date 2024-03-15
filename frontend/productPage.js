@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
             axios.post("http://localhost:8000/product-add-cart", {
                 product_id: Number(localStorage.getItem("product_id")),
                 customer_id: Number(localStorage.getItem("user_id")),
-                amout: Number(amount),
+                amount: Number(amount),
                 color_id: Number(selectedColorId),
                 size: selectedSize
             }).then((response) => {
