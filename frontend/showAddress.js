@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const road = document.getElementById("road");
         const province = document.getElementById("province");
         const postal_code = document.getElementById("postal_code");
+        const name = document.getElementById("name");
+        const phone = document.getElementById("phone");
+
         const data = response.data[3][0];
         console.log(data)
         const address = data.filter((item) => item._Address__id == localStorage.getItem("address_id"));
@@ -24,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
         road.value = address[0]._Address__road;
         province.value = address[0]._Address__province;
         postal_code.value = address[0]._Address__postal_code;
+        name.value = address[0]._Address__name;
+        phone.value = address[0]._Address__phone;
 
 
 

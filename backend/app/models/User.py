@@ -56,9 +56,9 @@ class Customer(Person):
         result = self.__shopping_cart.delete_product_from_shopping_cart(product, color_id, size)
         return result
     
-    def add_address(self, house_number, soi, road, province, postal_code):
+    def add_address(self, name, house_number, soi, road, province, postal_code, phone):
         id_address = len(self.__list_address) + 1
-        self.__list_address.append(Address(id_address, house_number, soi, road, province, postal_code))
+        self.__list_address.append(Address(id_address, name, house_number, soi, road, province, postal_code, phone))
         return {"data": "added successfully"}
     
     def delete_address(self, address_id):

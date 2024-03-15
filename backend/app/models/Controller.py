@@ -125,10 +125,10 @@ class Controller:
             return result
         return customer
     
-    def add_address(self, customer_id, house_number, soi, road, province, postal_code):
+    def add_address(self, customer_id, name, house_number, soi, road, province, postal_code, phone):
         customer = self.search_customer_by_id(customer_id) 
         if customer != {"Data ": "You haven't already register"} :
-            result = customer.add_address(house_number, soi, road, province, postal_code)
+            result = customer.add_address(name, house_number, soi, road, province, postal_code, phone)
             return result
         return customer
     

@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("Submit").addEventListener("click", function(){
-
-        
-
         axios.post("http://localhost:8000/address-add", {
+            "recipient_name" : document.getElementById("name").value,
+            "phone": document.getElementById("phone").value,
             "customer_id": Number(localStorage.getItem("user_id")),
             "house_number": document.getElementById("number").value,
             "soi": document.getElementById("soi").value,
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }).then((response) => {
             alert("Address added successfully")
             console.log(response)
-            window.location.href = "/viewProfile.html";
+            window.location.href = "./viewProfile.html";
           }).catch((error) => {
             alert("Please fill all the fields")
           });

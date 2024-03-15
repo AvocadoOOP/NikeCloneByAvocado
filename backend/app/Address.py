@@ -7,16 +7,17 @@ router = APIRouter()
 
 class AddressIn(BaseModel):
     customer_id : int
+    recipient_name  : str
     house_number : str
     soi : str
     road : str
     province : str
     postal_code : str
+    phone : str
 
 @router.post("/address-add/", tags =["Profile"])
 def add_address(data : AddressIn):
-    return controller.add_address(data.customer_id, data.house_number, data.soi, data.road, data.province, data.postal_code)
-
+    return controller.add_address(data.customer_id, data.recipient_name, data.house_number, data.soi, data.road, data.province, data.postal_code, data.phone)
 @router.get("/address-list/{customer_id}/", tags =["Profile"])
 def get_list_address(customer_id : int):
     return controller.view_address(customer_id)

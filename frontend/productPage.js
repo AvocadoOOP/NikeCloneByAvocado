@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const product = response.data;
 
-        console.log(product);
+        // console.log(product);
         const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
         selectedColor = product._Product__list_images[0]?.name;
 
 
-        console.log(selectedColor)
+        // console.log(selectedColor)
 
 
         const mainImage = document.getElementsByClassName("slide")[0];
@@ -236,32 +236,42 @@ const getData = async () => {
         console.log(cart)
         document.getElementById("subtotal_price").innerHTML = cart._ShoppingCart__total_price;
         const cart_items = document.getElementById("cart_items");
+        const item_number = document.getElementById("item_number");
 
+
+        item_number.innerText = cart._ShoppingCart__amount
         const cartItemsHtml = await Promise.all(cart._ShoppingCart__list_product_cart.map(async (product, index) => {
             try {
                 const response = await axios.get(`http://localhost:8000/product-detail/${product._SelectedProduct__id}`);
                 const productDetail = response.data;
-                console.log(productDetail)
-                console.log(product)
+                // console.log(productDetail)
+                // console.log(product)
                 const list_colors = productDetail._Product__list_product_style.map((color, index) => {
                     if (color.name === product._ProductStyle__product_style_id) {
                         return color
                     }
                 })
-                console.log(list_colors)
+                // console.log(list_colors)
+                const name_color = list_colors.filter( color => color._ProductStyle__product_style_id === product._SelectedProduct__color_id )[0]._ProductStyle__color
+                // console.log(name_color)
+                
+                const imageUrl = productDetail._Product__list_images.filter(color => color.name === name_color)[0].list_images[0] || '';
+                
+                console.log(product)
                 return `<div class="cart_item">
-                <div class="remove_item">
+                <div onclick="deleteItem(${product._SelectedProduct__id},${product._SelectedProduct__color_id},'${product._SelectedProduct__size}')" class="remove_item">
                   <span>&times;</span>
                 </div>
                 
                 <div class="item_img">
-                  <img src="PictureForNike/air-force-1-07-black-1.png"/>
+                  <img src=./${imageUrl}>
                 </div>
                 
                 <div class="item_details">
                   <p>${productDetail._Product__product_name}</p>
                   <strong> <small>฿ </small> ${productDetail._Product__price}</strong>
-                  <p style="font-size:20px;">Amount : ${product._SelectedProduct__amount}</p>
+                  <p style="font-size:13px;">Size : ${product._SelectedProduct__size}</p>
+                  <p style="font-size:13px;">Amount : ${product._SelectedProduct__amount}</p>
                 </div>
               </div>`
             } catch (error) {
@@ -339,3 +349,16 @@ const handleSelectedSize = (size) => {
 
 }
 
+
+const deleteItem = (product_id , color_id , size) => {
+    console.log("delete" , product_id , color_id , size)
+
+    axios.delete(`http://localhost:8000/product-delete-cart/${window.localStorage.getItem("user_id")}/${product_id}/${color_id}/${size}`).then((response) => {
+        console.log(response.data)
+        // alert("Delete item success")
+        getData();
+    }).catch((error) => {
+        console.log(error)
+        alert("Delete item fail")
+    })
+}

@@ -33,6 +33,7 @@ body {
     background-attachment: fixed; 
 }
 
+
 .heading{
     margin-left: 2vw;
     font-size: 2vw;
@@ -73,6 +74,11 @@ body {
     font-size:1.5vw;
 }
 
+.address_details p span{
+    font-weight: 300;
+    font-size: smaller;
+
+}
 
 @media (max-width: 768px) {
     .confirm_address,
@@ -123,15 +129,6 @@ body {
     transition: 0.1s;
 }
 
-.dropdown-content a:hover {
-    background-color: #ff0000;
-    color: #212121;
-}
-
-.dropdown-content a:focus {
-    background-color: #212121;
-    color: #ff0000;
-}
 
 .dropdown-content #drop-down-address1:hover {
     border-radius: 0px 13px 0px 0px;
@@ -229,6 +226,11 @@ body {
 .submit-btn:hover {
     letter-spacing: 2px;
     opacity: .8;
+}
+
+.selected_address {
+    background-color: red !important;
+
 }
 
 
