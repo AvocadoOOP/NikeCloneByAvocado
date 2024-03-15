@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let formattedDate = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
 
-            return `<div class="flex-row order-row">
+            return `<div class="flex-row order-row" onclick="view_history(${order._Order__order_id})" >
             <div class="flex-item order-row-item order-num">${String(order._Order__order_id).padStart(4, '0')}</div>
             <div class="flex-item order-row-item">${formattedDate}</div>
             <div class="flex-item order-row-item num-of-items">${order._Order__shopping_cart._ShoppingCart__amount
@@ -245,3 +245,9 @@ const showCard = (card_id) => {
     localStorage.setItem("card_id", card_id)
     window.location.href = "/showCreditCard.html";
 }
+const view_history = (order_id) => {
+
+    localStorage.setItem("order_id", order_id)
+    window.location.href = "/history.html";
+}
+
