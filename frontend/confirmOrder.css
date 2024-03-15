@@ -73,7 +73,11 @@ body {
     margin-bottom: 2vh;
     font-size:1.5vw;
 }
+.creditCart_details p span{
+    font-weight: 300;
+    font-size: smaller;
 
+}
 .address_details p span{
     font-weight: 300;
     font-size: smaller;
@@ -231,8 +235,9 @@ body {
     opacity: .8;
 }
 
-.selected_address {
+.selected_address , .selected_credit{
     background-color: red !important;
+
 
 }
 

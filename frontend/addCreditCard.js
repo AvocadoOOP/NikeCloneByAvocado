@@ -70,7 +70,8 @@ document.querySelector('.cvv-input').oninput = () =>{
     });
 
     document.getElementById("Submit").addEventListener("click", function(){
-          
+        event.preventDefault();
+
         if (document.getElementById("card_name").value == "" || document.getElementById("number").value == "" || document.getElementById("pin").value == "" || selectedCardType == ""){
             alert("Please fill all the fields")
             return;
