@@ -62,7 +62,19 @@ let selectedSize = ""
 let productShow = {}
 let amount = 1;
 
+let list_like = [];
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    axios.get(`http://localhost:8000/favorite-list/${localStorage.getItem("user_id")}`).then((response) => {
+      const data = response.data;
+
+      list_like = data.map((product) => {
+        return product._Product__product_id;
+      });
+
+      console.log(list_like)
+  });
 
 
 
@@ -70,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
     axios.get("http://localhost:8000/product-detail/" + localStorage.getItem("product_id")).then((response) => {
 
         const product = response.data;
+
+        console.log(product)
 
         // console.log(product);
         const imageUrl = product._Product__list_images[0]?.list_images[1] || '';
@@ -86,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.getElementById("slider");
         const list_colors = document.getElementById("list_colors");
         const list_size = document.getElementById("list_size");
+
+        document.getElementById("like").checked = list_like.includes(Number(localStorage.getItem("product_id")));
 
 
         mainImage.src = imageUrl;
@@ -248,7 +264,11 @@ const getData = async () => {
         document.getElementById("subtotal_price").innerHTML = cart._ShoppingCart__total_price;
         const cart_items = document.getElementById("cart_items");
         const item_number = document.getElementById("item_number");
+        
 
+        if (list_like.includes(Number(localStorage.getItem("product_id")))) {
+                toggle_favorite.ariaChecked = true;
+        }
 
         item_number.innerText = cart._ShoppingCart__amount
         const cartItemsHtml = await Promise.all(cart._ShoppingCart__list_product_cart.map(async (product, index) => {
@@ -374,3 +394,20 @@ const deleteItem = (product_id , color_id , size) => {
         alert("Delete item fail")
     })
 }
+
+const toggle_favorite = (productId) => {
+    axios.post(`http://localhost:8000/toggle-favorite/${localStorage.getItem("user_id")}/${productId}`).then((response) => {
+      console.log(response.data);
+  
+  });
+  }
+
+document.getElementById("like").addEventListener("click", function () {
+    if (localStorage.getItem("user_id") == null) {
+        window.location.href = "/loginRegister.html";
+    }
+    else {
+        toggle_favorite(localStorage.getItem("product_id"));
+    }
+});
+        
